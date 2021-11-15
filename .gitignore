@@ -6,6 +6,5 @@
 /build
 /captures
 local.properties
-*.properties
 !debug.properties
 !release.properties
