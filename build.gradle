@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: "$rootDir/project_gradle/dependencies.gradle"
+    apply from: "$rootDir/project_gradle/test_dependencies.gradle"
+    apply from: "$rootDir/project_gradle/jacoco.gradle"
+    apply from: "$rootDir/project_gradle/build_info.gradle"
+
+    ext.anko_version='0.10.4'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        maven { url "https://jitpack.io" }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force("org.objenesis:objenesis:2.6")
+            force("android.arch.core:runtime:$versions.lifecycle")
+            force "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+            force "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+            force "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
+            force "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+            force "androidx.appcompat:appcompat:$versions.appCompat"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

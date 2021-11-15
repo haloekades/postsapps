@@ -1,0 +1,30 @@
+ext {
+    testVersion = [
+            androidXTest         :  '1.2.0',
+            archCoreTesting      :  '2.1.0',
+            archCoreKtxTesting   :  '1.3.0-alpha04',
+            espresso             :  '3.2.0',
+            fragmentTesting      :  '1.2.5',
+            hamkrest             :  '1.7.0.3',
+            jUnit                :  '4.12',
+            jUnitExt             :  '1.1.2-beta01',
+            mockK                :  '1.11.0',
+            roboElectric         :  '4.5.1',
+            fake                 :  '0.9'
+    ]
+    testLib = [
+            androidXCore         :  "androidx.test:core:$testVersion.androidXTest",
+            androidXRules        :  "androidx.test:rules:$testVersion.androidXTest",
+            androidXRunner       :  "androidx.test:runner:$testVersion.androidXTest",
+            archCoreTesting      :  "androidx.arch.core:core-testing:$testVersion.archCoreTesting",
+            archCoreKtxTesting   :  "androidx.test:core-ktx:$testVersion.archCoreKtxTesting",
+            espresso             :  "androidx.test.espresso:espresso-core:$testVersion.espresso",
+            fragmentTesting      :  "androidx.fragment:fragment-testing:$testVersion.fragmentTesting",
+            hamkrest             :  "com.natpryce:hamkrest:$testVersion.hamkrest",
+            jUnit                :  "junit:junit:$testVersion.jUnit",
+            jUnitExt             :  "androidx.test.ext:junit:$testVersion.jUnitExt",
+            mockK                :  "io.mockk:mockk:$testVersion.mockK",
+            roboElectric         :  "org.robolectric:robolectric:$testVersion.roboElectric",
+            fake                 :  "com.github.xgouchet:Elmyr:$testVersion.fake"
+    ]
+}

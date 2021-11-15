@@ -1,0 +1,16 @@
+apply from: "$rootDir/project_gradle/lib_module.gradle"
+apply from: "$rootDir/project_gradle/common_test.gradle"
+
+dependencies {
+    api project(":lib_application")
+    api project(":lib_ui_asset")
+    api "$lib.paris"
+    api "$lib.coreKtx"
+    api "$lib.constraintLayout"
+    api "$lib.fastAdapter"
+    api "$lib.fastAdapterCommons"
+    api "$lib.fastAdapterExt"
+    implementation "$lib.glide"
+    api "$lib.material"
+    api 'com.facebook.shimmer:shimmer:0.5.0'
+}

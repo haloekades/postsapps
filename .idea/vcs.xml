@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MamiPay" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MamiPay/MamiPay/android-libs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MamiPay/MamiPay/android-mvvm-libs" vcs="Git" />
+  </component>
+</project>

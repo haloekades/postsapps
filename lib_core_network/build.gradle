@@ -1,0 +1,14 @@
+apply from: "$rootDir/project_gradle/lib_module.gradle"
+apply from: "$rootDir/project_gradle/common_test.gradle"
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation project(":lib_application")
+    implementation "$lib.lifecycleViewModel"
+    implementation "$lib.coreKtx"
+    implementation "$lib.fuelAndroid"
+    implementation "$lib.lifecycleExtensions"
+    implementation "$lib.apacheCodec"
+    implementation "$lib.fuelRxJava"
+    implementation "$lib.rxAndroid"
+}

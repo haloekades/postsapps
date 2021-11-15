@@ -1,0 +1,119 @@
+final ignoreFail = true
+def getModules() {
+    return subprojects.findAll {
+        it.name.contains("app") ||
+                it.name.startsWith("lib_") ||
+                it.name.startsWith("feature_") ||
+                it.name.startsWith("base_")
+    }
+}
+final coveredModules = getModules()
+final excludedFiles = [
+    '**/R.class',
+    '**/BR.*',
+    '**/R$*.class',
+    '**/BuildConfig.*',
+    '**/Manifest*.*',
+    '**/*Test*.*',
+    'android/**/*.*',
+    'androidx/**/*.*',
+    '**/data/models/*',
+    '**/androidx/databinding/*',
+    '**/databinding/*',
+    '**/generated/*'
+]
+
+ext.coveredModules = coveredModules
+
+configure(coveredModules) { prj ->
+    apply plugin: 'jacoco'
+
+    jacoco {
+        version "0.8.5"
+    }
+
+    tasks.withType(Test) {
+        ignoreFailures ignoreFail.toBoolean()
+        jacoco.includeNoLocationClasses = true
+        jacoco.excludes = ['jdk.internal.*']
+        maxParallelForks = Runtime.runtime.availableProcessors()
+        forkEvery = 100
+    }
+
+    task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+        group = 'Reporting'
+        description = 'Generate Jacoco coverage reports after running tests.'
+
+        final baseJacocoPath = "${buildDir}/reports/jacoco"
+        final jacocoPath = "${baseJacocoPath}/jacocoReport"
+        final htmlReportPath = "${jacocoPath}/html"
+
+        reports {
+            html {
+                enabled = true
+                destination file(htmlReportPath)
+            }
+            xml.enabled = false
+        }
+
+        final fileFilter = excludedFiles
+        def debugTree = fileTree(dir: "${buildDir}/intermediates/javac/debug", excludes: fileFilter)
+        def kotlinDebugTree = fileTree(dir: "${buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
+        final mainSrc = "${prj.projectDir}/src/main/java"
+
+        sourceDirectories.setFrom files([mainSrc])
+        classDirectories.setFrom files([debugTree], [kotlinDebugTree])
+        executionData.setFrom fileTree(dir: "$buildDir", includes: [
+            'jacoco/testDebugUnitTest.exec',
+            'outputs/code-coverage/connected/*coverage.ec'
+        ])
+    }
+}
+
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion "0.8.5"
+}
+
+/**
+ *  Root task that generates an aggregated Jacoco test coverage report for all sub-projects
+ */
+task jacocoMergeReport(type: JacocoReport, group: 'Coverage reports') {
+    group = 'Reporting'
+    description = 'Generates an aggregate report from all subprojects'
+
+    tasks.withType(Test) {
+        ignoreFailures true
+    }
+
+    def projects = coveredModules
+
+    //noinspection GrUnresolvedAccess
+    dependsOn(projects.jacocoReport)
+
+    final source = files(projects.jacocoReport.sourceDirectories)
+
+    additionalSourceDirs.setFrom source
+    sourceDirectories.setFrom source
+
+    classDirectories.setFrom files(projects.jacocoReport.classDirectories)
+    executionData.setFrom files(projects.jacocoReport.executionData)
+
+    reports {
+        html {
+            enabled true
+            destination file('build/reports/jacoco/merge/html')
+        }
+    }
+
+    doFirst {
+        executionData.setFrom files(executionData.findAll { it.exists() })
+    }
+}
+
+task checkCoveredModules() {
+    doFirst {
+        println coveredModules.findAll { it.name }
+    }
+}

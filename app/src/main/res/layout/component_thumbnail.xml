@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/thumbnailImageView"
+        style="@style/Body1"
+        android:layout_width="@dimen/spacing_x64"
+        android:layout_height="@dimen/spacing_x64"
+        android:scaleType="fitCenter"
+        android:textColor="@color/mineShaft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</merge>

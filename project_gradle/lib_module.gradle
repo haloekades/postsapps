@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion builds.compileSdk
+
+    defaultConfig {
+        minSdkVersion builds.minSdk
+        targetSdkVersion builds.targetSdk
+        versionCode builds.versionCode
+        versionName builds.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {}
+
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+            proguardFiles "$rootDir/app/proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    testOptions {
+        unitTests.all {
+            setIgnoreFailures(true)
+            testLogging {
+                events "started", "passed", "skipped", "failed"
+            }
+        }
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+}

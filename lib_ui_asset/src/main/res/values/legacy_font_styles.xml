@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Regular">
+        <item name="android:fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="RegularBold">
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="RegularItalic">
+        <item name="android:fontFamily">@font/font_italic</item>
+    </style>
+
+    <style name="FontMainBold">
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="FontRegular">
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="FontBold">
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="Bold">
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+</resources>

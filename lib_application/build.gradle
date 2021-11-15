@@ -1,0 +1,12 @@
+apply from: "$rootDir/project_gradle/lib_module.gradle"
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "$lib.appCompat"
+    implementation "$lib.kotlinStdLib"
+    api "$lib.gson"
+    implementation "$lib.lifecycleExtensions"
+    implementation "$lib.rxAndroid"
+    implementation "$lib.coroutines"
+    api "$lib.koinViewModel"
+}

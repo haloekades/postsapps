@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Display" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_64</item>
+        <item name="lineHeight">@dimen/text_line_height_80</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_48</item>
+        <item name="lineHeight">@dimen/text_line_height_60</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_32</item>
+        <item name="lineHeight">@dimen/text_line_height_40</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_28</item>
+        <item name="lineHeight">@dimen/text_line_height_36</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading4" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_24</item>
+        <item name="lineHeight">@dimen/text_line_height_32</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading5" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_20</item>
+        <item name="lineHeight">@dimen/text_line_height_28</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Heading6" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textSize">@dimen/text_dimen_18</item>
+        <item name="lineHeight">@dimen/text_line_height_26</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
+    </style>
+
+    <style name="Title1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_28</item>
+        <item name="lineHeight">@dimen/text_line_height_36</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Title2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_24</item>
+        <item name="lineHeight">@dimen/text_line_height_32</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Title3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_20</item>
+        <item name="lineHeight">@dimen/text_line_height_28</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Title4" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_18</item>
+        <item name="lineHeight">@dimen/text_line_height_26</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Title5" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="BodyBlog" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_20</item>
+        <item name="lineHeight">@dimen/text_line_height_28</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Body1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Body2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Body2Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_italic</item>
+        <item name="android:fontFamily">@font/lato_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Body3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Body4" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Body4Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_italic</item>
+        <item name="android:fontFamily">@font/lato_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Label1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Label2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Label3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Label4" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Label4Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_black_italic</item>
+        <item name="android:fontFamily">@font/lato_black_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Label2Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_italic</item>
+        <item name="android:fontFamily">@font/lato_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Caption1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Caption2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Caption2Italic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_italic</item>
+        <item name="android:fontFamily">@font/lato_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Button1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Button2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Button3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">@dimen/text_line_height_16</item>
+        <item name="fontWeight">@integer/text_weight_700</item>
+    </style>
+
+    <style name="Link1" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Link2" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_20</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="Link3" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_18</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="InputFieldTextSmall" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_12</item>
+        <item name="lineHeight">@dimen/text_line_height_16</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="InputFieldTextMedium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_14</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+    <style name="InputFieldTextLarge" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
+</resources>

@@ -1,0 +1,20 @@
+<!!OK!!>Kalo set filter lokasinya balik ke JAKSEL terus, klo di Depok tp gak selalu
+<!!OK!!> Default filter Bulanan
+Tampilan list terlalu besar, kalo trulia bisa muncul 2 card + 1 dikit.. jd bikin org mau scroll
+Simpan Filter -> nanti ada popup nanti ak kasih design sama ini buat ganti berlangganan
+<!!OK!!>Kalau udah pernah login, no hape sama email g ush ditanya lg pas login ulang?
+<!!OK!!>Album blm bs dislides
+<!!PROGRESS!!>Detail - harga munculkan 1.200.000/bulan, 100.000/hari.. ada "/" nya
+<!!PROGRESS!!>Detail - kalau harga 0 g ush muncul
+<!!OK!!>Detail - Fungsi pesan, wa , telp blum jalan
+<!!PROGRESS!!>List - Smua - Harga tulis dengan 1jt/bulan ada "/"
+Yang ada 360 nya nanti di list ada icon 360, ntar ak buat design
+<!!OK!!>Kalau filter harga mulai dipilih, harga sampai gak bs klik
+<!!OK!!>Dari Tampilan List > ke Filter > balik List gak update ( ak g milih putra tp ada putra), tp kalo ke peta trus blik ke list update
+<!!OK!!>Lokasi sekarang kalo loc mati > gak minta nyalain loc tp ke tempat g jelas
+<!!OK!!>Call me kalo bs form otomatis keisi kalo pernah login
+<!!OK!!>Kolom Nama no hape Email di call susah dipencet
+<!!OK!!>Kolom email gak bisa diisi
+<!!OK!!>Fav sama Share di detail native kok g ada ya
+<!!OK!!>Reset belum berfungsi..
+

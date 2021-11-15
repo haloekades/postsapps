@@ -1,0 +1,7 @@
+apply from: "$rootDir/project_gradle/lib_module.gradle"
+apply from: "$rootDir/project_gradle/common_test.gradle"
+
+dependencies {
+    implementation project(':lib_application')
+    implementation "$lib.coreKtx"
+}

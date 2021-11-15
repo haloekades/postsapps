@@ -1,0 +1,108 @@
+apply plugin: 'jacoco'
+
+android {
+    defaultConfig {
+        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+    }
+
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            all {
+                jvmArgs "-Xmx2g"
+                systemProperty 'robolectric.dependency.repo.url', 'https://repo1.maven.org/maven2'
+                testLogging {
+                    events "started", "passed", "skipped", "failed"
+                }
+            }
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    final unitTestSrcDirs = ['src/test/java']
+    final uiTestSrcDirs = ['src/sharedTest/java']
+    def testSrcDirs = unitTestSrcDirs + uiTestSrcDirs
+
+    sourceSets {
+        androidTest {
+            java.srcDirs += uiTestSrcDirs
+            kotlin.srcDirs += uiTestSrcDirs
+        }
+        test {
+            java.srcDirs = testSrcDirs
+            kotlin.srcDirs = testSrcDirs
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    annotationProcessor 'com.google.auto.value:auto-value:1.1'
+
+    testImplementation project(':lib_core_test')
+    androidTestImplementation project(':lib_core_test')
+
+    testImplementation "$testLib.androidXCore"
+    androidTestImplementation "$testLib.androidXCore"
+
+    testImplementation "$testLib.androidXRules"
+    androidTestImplementation "$testLib.androidXRules"
+
+    testImplementation "$testLib.androidXRunner"
+    androidTestImplementation "$testLib.androidXRunner"
+
+    testImplementation "$testLib.archCoreKtxTesting"
+    androidTestImplementation "$testLib.archCoreKtxTesting"
+
+    testImplementation "$testLib.mockK"
+    androidTestImplementation "$testLib.mockK"
+
+    testImplementation "$testLib.hamkrest"
+    androidTestImplementation "$testLib.hamkrest"
+
+    testImplementation "$testLib.archCoreTesting"
+    androidTestImplementation "$testLib.archCoreTesting"
+
+    testImplementation "$testLib.jUnitExt"
+    androidTestImplementation "$testLib.jUnitExt"
+
+    testImplementation "$testLib.espresso"
+    androidTestImplementation "$testLib.espresso"
+
+    testImplementation "$testLib.jUnit"
+    androidTestImplementation "$testLib.jUnit"
+
+    testImplementation "$testLib.roboElectric"
+    androidTestImplementation("$testLib.roboElectric") {
+        exclude group: 'org.apache.maven', module: 'maven-artifact'
+        exclude group: 'org.apache.maven', module: 'maven-artifact-manager'
+        exclude group: 'org.apache.maven', module: 'maven-model'
+        exclude group: 'org.apache.maven', module: 'maven-plugin-registry'
+        exclude group: 'org.apache.maven', module: 'maven-profile'
+        exclude group: 'org.apache.maven', module: 'maven-project'
+        exclude group: 'org.apache.maven', module: 'maven-settings'
+        exclude group: 'org.apache.maven', module: 'maven-error-diagnostics'
+        exclude group: 'org.apache.maven', module: 'maven-ant-tasks'
+        exclude group: "org.apache.maven.wagon"
+        exclude group: "org.codehaus.plexus"
+    }
+
+    testImplementation "$testLib.fake"
+    androidTestImplementation "$testLib.fake"
+
+    debugImplementation("$testLib.fragmentTesting") {
+        exclude group: 'androidx.test', module: 'core'
+    }
+    androidTestImplementation ("$testLib.fragmentTesting")
+
+    testImplementation "$lib.rxJava"
+    testImplementation "$lib.rxAndroid"
+
+    // Will be deleted soon
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.0.0'
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+    testImplementation 'org.mockito:mockito-core:3.0.0'
+}

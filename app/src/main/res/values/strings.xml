@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="app_name">Posts Test</string>
+    <string name="author">Author :</string>
+    <string name="comments">Comments :</string>
+    <string name="username_with_value"><![CDATA[<b>Username</b><br/>%s]]></string>
+    <string name="email_with_value"><![CDATA[<b>Email<b><br/>%s]]></string>
+    <string name="address_with_value"><![CDATA[<b>Address</b><br/>%s, %s,<br/> %s,<br/>%s]]></string>
+    <string name="company_with_value"><![CDATA[<b>Company</b><br/>%s,<br/>%s,<br/>%s]]></string>
+    <string name="album_photos">Album Photos</string>
+    <string name="title_app_name">Posts Test</string>
+    <string name="title_post_detail">Post Detail</string>
+    <string name="title_user_detail">User Detail</string>
+    <string name="title_photo_detail">Photo Detail</string>
+
+</resources>

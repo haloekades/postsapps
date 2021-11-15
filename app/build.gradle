@@ -1,0 +1,115 @@
+buildscript {
+    repositories {
+        google()
+        maven { url 'https://maven.google.com' }
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+apply plugin: 'jacoco'
+apply from: "$rootDir/project_gradle/common_test.gradle"
+
+android {
+    compileSdkVersion builds.compileSdk
+    testOptions {
+        animationsDisabled true
+        unitTests.all {
+            setIgnoreFailures(true)
+            testLogging {
+                events "started", "passed", "skipped", "failed"
+            }
+        }
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.ekades.poststest"
+        minSdkVersion builds.minSdk
+        targetSdkVersion builds.targetSdk
+        versionCode builds.versionCode
+        versionName builds.versionName
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    aaptOptions {
+        cruncherEnabled = false
+    }
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/ECLIPSE_.SF'
+        exclude 'META-INF/ECLIPSE_.RSA'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    androidExtensions {
+        experimental = true
+    }
+    dataBinding {
+        enabled = true
+    }
+    bundle {
+        language {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    api project(':lib_application')
+    api project(':lib_core_network')
+    api project(':lib_core_ui')
+    api project(':lib_ui_component')
+    implementation "$lib.coroutines"
+    api "$lib.koinAndroid"
+    api "$lib.koinScope"
+    api "$lib.koinViewModel"
+    api "$lib.multidex"
+    api "$lib.ankoSdk23"
+    implementation "$lib.constraintLayout"
+    implementation "$lib.rxAndroid"
+    implementation "$lib.zoomage"
+}

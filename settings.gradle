@@ -1,0 +1,7 @@
+include ':lib_core_network'
+include ':lib_ui_component'
+include ':lib_ui_asset'
+include ':lib_application'
+include ':lib_core_ui'
+include ':lib_core_test'
+include ':app'

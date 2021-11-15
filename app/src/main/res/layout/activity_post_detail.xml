@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:context="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingTop="@dimen/spacing_x16">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/userIconBgView"
+                    android:layout_width="@dimen/spacing_x42"
+                    android:layout_height="@dimen/spacing_x42"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/userIconTextView"
+                        style="@style/Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/mineShaft"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/userNameTextView"
+                    style="@style/Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_x12"
+                    android:layout_marginLeft="@dimen/spacing_x12"
+                    android:layout_marginEnd="@dimen/spacing_x16"
+                    android:layout_marginRight="@dimen/spacing_x16"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/userIconBgView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userCompanyNameTextView"
+                    style="@style/Body3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_x4"
+                    android:textColor="@color/tundora"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/userNameTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    style="@style/Title5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@id/userIconBgView" />
+
+                <TextView
+                    android:id="@+id/bodyTextView"
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x8"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                    android:id="@+id/dividerCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    app:layout_constraintTop_toBottomOf="@+id/bodyTextView" />
+
+                <TextView
+                    android:id="@+id/commentTextView"
+                    style="@style/Title5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:text="@string/comments"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@+id/dividerCV" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x4"
+                    app:layout_constraintTop_toBottomOf="@+id/commentTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
