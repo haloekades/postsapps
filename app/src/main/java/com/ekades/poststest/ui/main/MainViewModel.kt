@@ -52,7 +52,7 @@ class MainViewModel : BaseViewModel() {
         val result = posts.value
 
         result?.forEach {
-            getUserById(it.userId)?.apply {
+            getUserById(it.userId?:0)?.apply {
                 it.userName = username
                 it.userCompanyName = company.name
             }

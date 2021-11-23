@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.VisibleForTesting
 import com.ekades.poststest.R
+import com.ekades.poststest.features.post.presentation.activities.MainV2Activity
 import com.ekades.poststest.ui.main.MainActivity
 import kotlinx.coroutines.*
 
@@ -26,7 +27,9 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun gotoMain() {
-        startActivity(MainActivity.newIntent(this))
+//        startActivity(MainActivity.newIntent(this))
+//        finishAffinity()
+        startActivity(MainV2Activity.newIntent(this))
         finishAffinity()
     }
 

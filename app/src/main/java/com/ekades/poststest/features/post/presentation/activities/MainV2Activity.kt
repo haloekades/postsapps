@@ -1,10 +1,15 @@
-package com.ekades.poststest.ui.main
+package com.ekades.poststest.features.post.presentation.activities
 
 import android.app.Activity
 import android.content.Intent
-import androidx.lifecycle.Observer
+import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.observe
 import com.ekades.poststest.R
 import com.ekades.poststest.components.MainPostCV
+import com.ekades.poststest.features.post.presentation.model.PostVM
+import com.ekades.poststest.features.post.presentation.viewModels.MainV2ViewModel
+import com.ekades.poststest.features.post.presentation.viewModels.state.PostsVS
 import com.ekades.poststest.lib.application.ui.CoreActivity
 import com.ekades.poststest.lib.application.ApplicationProvider.context
 import com.ekades.poststest.lib.core.ui.extension.diffCalculateAdapter
@@ -25,7 +30,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.backgroundColor
 
-class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
+class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
 
     private val postsAdapter by lazy {
         postsRecyclerView?.linearLayoutAdapter(this)
@@ -37,8 +42,8 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
 
     override fun render() = launch(Dispatchers.Main) {
         setupToolbarView()
-        registerObserver()
-        getMainData()
+        observeViewModel()
+        viewModel.getPosts()
     }
 
     private fun setupToolbarView() {
@@ -48,28 +53,24 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
         setSupportActionBar(toolbar);
     }
 
-    private fun getMainData() {
-        showLoadingView()
-        viewModel.getPostList()
-        viewModel.getUserList()
-    }
-
-    private fun registerObserver() {
-        val postUsers = viewModel.mediatorPostUsers
-        postUsers.observe(this, object : Observer<ArrayList<Post>> {
-            override fun onChanged(postList: ArrayList<Post>) {
-                postUsers.removeObserver(this)
-                postList.bindView()
+    private fun observeViewModel() {
+        viewModel.viewState.observe(this) {
+            when (it) {
+                is PostsVS.AddPost -> {
+//                    bindView(it.postVM)
+//                    println(it.postsVM)
+                    it.postsVM.bindView()
+                }
+                is PostsVS.ShowLoader -> {
+                    if (it.showLoader) {
+                        showLoadingView()
+                    }
+                }
+                is PostsVS.Error -> {
+                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                }
             }
-        })
-
-        viewModel.getPostsApiResponse.observe(this, Observer {
-            viewModel.handleResponseGetPosts(it)
-        })
-
-        viewModel.getUsersApiResponse.observe(this, Observer {
-            viewModel.handleResponseGetUsers(it)
-        })
+        }
     }
 
     private fun showLoadingView() {
@@ -95,7 +96,23 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
         return component
     }
 
-    private fun ArrayList<Post>.bindView() {
+//    private fun bindView(postVM: PostVM) {
+//        val postsComponent: MutableList<Component<*>> =
+//            postVM.map {
+//                ConstraintContainer.newComponent({
+//                    MainPostCV(context)
+//                }) {
+//                    post = it
+//                    onClickListener = { itemPost ->
+//                        openPostDetail(itemPost)
+//                    }
+//                }.withIdentifier("${it.id}".hashCode().toLong())
+//            }.toMutableList()
+//
+//        postsAdapter?.diffCalculateAdapter(postsComponent)
+//    }
+//
+    private fun List<Post>.bindView() {
         val postsComponent: MutableList<Component<*>> =
             this.map {
                 ConstraintContainer.newComponent({
@@ -103,30 +120,30 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
                 }) {
                     post = it
                     onClickListener = { itemPost ->
-                        openPostDetail(itemPost)
+//                        openPostDetail(itemPost)
                     }
                 }.withIdentifier("${it.id}".hashCode().toLong())
             }.toMutableList()
 
         postsAdapter?.diffCalculateAdapter(postsComponent)
     }
-
-    private fun openPostDetail(post: Post?) {
-        post?.apply {
-            startActivity(
-                PostDetailActivity.newIntent(
-                    this@MainActivity,
-                    post = post,
-                    user = viewModel.getUserById(post.userId ?: 0)
-                )
-            )
-        }
-    }
+//
+//    private fun openPostDetail(post: Post?) {
+//        post?.apply {
+//            startActivity(
+//                PostDetailActivity.newIntent(
+//                    this@MainV2Activity,
+//                    post = post,
+//                    user = viewModel.getUserById(post.userId)
+//                )
+//            )
+//        }
+//    }
 
     companion object {
         @JvmStatic
         fun newIntent(activity: Activity): Intent {
-            return Intent(activity, MainActivity::class.java)
+            return Intent(activity, MainV2Activity::class.java)
         }
     }
 }

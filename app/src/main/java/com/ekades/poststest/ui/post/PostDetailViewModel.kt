@@ -33,7 +33,7 @@ class PostDetailViewModel : BaseViewModel() {
 
     fun getCommentList() {
         post?.apply {
-            disposables.add(MainDataSource().getComments(getCommentsApiResponse, postId = id))
+            disposables.add(MainDataSource().getComments(getCommentsApiResponse, postId = id ?: 0))
         }
     }
 

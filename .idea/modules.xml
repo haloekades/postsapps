@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/poststest.iml" filepath="$PROJECT_DIR$/.idea/modules/poststest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/poststest.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/poststest.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/poststest.lib_application.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/poststest.lib_application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/poststest.lib_core_network.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/poststest.lib_core_network.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/poststest.lib_core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/poststest.lib_core_test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/poststest.lib_core_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/poststest.lib_core_ui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/poststest.lib_ui_asset.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/poststest.lib_ui_asset.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/poststest.lib_ui_component.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/poststest.lib_ui_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/postapps.iml" filepath="$PROJECT_DIR$/.idea/modules/postapps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postapps.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postapps.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postapps.lib_application.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postapps.lib_application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postapps.lib_core_network.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postapps.lib_core_network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postapps.lib_core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postapps.lib_core_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postapps.lib_core_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postapps.lib_core_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postapps.lib_ui_asset.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postapps.lib_ui_asset.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postapps.lib_ui_component.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postapps.lib_ui_component.iml" />
     </modules>
   </component>
 </project>

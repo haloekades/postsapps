@@ -112,4 +112,6 @@ dependencies {
     implementation "$lib.constraintLayout"
     implementation "$lib.rxAndroid"
     implementation "$lib.zoomage"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
 }
