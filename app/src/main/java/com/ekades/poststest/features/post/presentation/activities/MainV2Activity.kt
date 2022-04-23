@@ -10,6 +10,7 @@ import com.ekades.poststest.components.MainPostCV
 import com.ekades.poststest.features.post.presentation.model.PostVM
 import com.ekades.poststest.features.post.presentation.viewModels.MainV2ViewModel
 import com.ekades.poststest.features.post.presentation.viewModels.state.PostsVS
+import com.ekades.poststest.helper.VidioSDK
 import com.ekades.poststest.lib.application.ui.CoreActivity
 import com.ekades.poststest.lib.application.ApplicationProvider.context
 import com.ekades.poststest.lib.core.ui.extension.diffCalculateAdapter
@@ -29,6 +30,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.backgroundColor
+import kotlin.math.log
 
 class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
 
@@ -57,8 +59,6 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
         viewModel.viewState.observe(this) {
             when (it) {
                 is PostsVS.AddPost -> {
-//                    bindView(it.postVM)
-//                    println(it.postsVM)
                     it.postsVM.bindView()
                 }
                 is PostsVS.ShowLoader -> {
@@ -96,22 +96,6 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
         return component
     }
 
-//    private fun bindView(postVM: PostVM) {
-//        val postsComponent: MutableList<Component<*>> =
-//            postVM.map {
-//                ConstraintContainer.newComponent({
-//                    MainPostCV(context)
-//                }) {
-//                    post = it
-//                    onClickListener = { itemPost ->
-//                        openPostDetail(itemPost)
-//                    }
-//                }.withIdentifier("${it.id}".hashCode().toLong())
-//            }.toMutableList()
-//
-//        postsAdapter?.diffCalculateAdapter(postsComponent)
-//    }
-//
     private fun List<Post>.bindView() {
         val postsComponent: MutableList<Component<*>> =
             this.map {
@@ -120,25 +104,12 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
                 }) {
                     post = it
                     onClickListener = { itemPost ->
-//                        openPostDetail(itemPost)
                     }
                 }.withIdentifier("${it.id}".hashCode().toLong())
             }.toMutableList()
 
         postsAdapter?.diffCalculateAdapter(postsComponent)
     }
-//
-//    private fun openPostDetail(post: Post?) {
-//        post?.apply {
-//            startActivity(
-//                PostDetailActivity.newIntent(
-//                    this@MainV2Activity,
-//                    post = post,
-//                    user = viewModel.getUserById(post.userId)
-//                )
-//            )
-//        }
-//    }
 
     companion object {
         @JvmStatic

@@ -37,6 +37,9 @@
             android:name=".features.post.presentation.activities.MainV2Activity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".features.users.presentation.activities.UserListActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.ekades.poststest.ui.post.PostDetailActivity"
             android:screenOrientation="portrait" />
         <activity

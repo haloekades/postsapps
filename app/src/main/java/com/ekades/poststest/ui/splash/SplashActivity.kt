@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.annotation.VisibleForTesting
 import com.ekades.poststest.R
 import com.ekades.poststest.features.post.presentation.activities.MainV2Activity
+import com.ekades.poststest.features.users.presentation.activities.UserListActivity
+import com.ekades.poststest.helper.VidioSDK
 import com.ekades.poststest.ui.main.MainActivity
 import kotlinx.coroutines.*
 
@@ -22,20 +24,23 @@ class SplashActivity : AppCompatActivity() {
     private fun runSplash() {
         splashJob = coroutineScope.launch {
             delay(SPLASH_DELAY)
-            gotoMain()
+//            gotoMain()
+            VidioSDK.downloadEpisode(0) { downloadStatus ->
+                print("downloadStatus : $downloadStatus")
+            }
         }
     }
 
     private fun gotoMain() {
 //        startActivity(MainActivity.newIntent(this))
 //        finishAffinity()
-        startActivity(MainV2Activity.newIntent(this))
+        startActivity(UserListActivity.newIntent(this))
         finishAffinity()
     }
 
     companion object {
         @VisibleForTesting
-        const val SPLASH_DELAY = 2000L
+        const val SPLASH_DELAY = 4000L
     }
 
 }

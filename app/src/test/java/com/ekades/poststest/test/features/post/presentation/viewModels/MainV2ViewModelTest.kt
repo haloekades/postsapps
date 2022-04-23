@@ -41,7 +41,7 @@ class MainV2ViewModelTest {
         coEvery { useCaseMock.execute(Interactor.None) } returns TestData.dataList
         viewModel.getPosts()
         viewModel.viewState.getOrAwaitValue()
-        verify(exactly = 3) { observer.onChanged(any<PostsVS.AddPost>()) }
+        verify { observer.onChanged(any<PostsVS.AddPost>()) }
     }
 
     @Test

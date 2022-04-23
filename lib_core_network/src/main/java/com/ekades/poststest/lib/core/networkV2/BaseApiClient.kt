@@ -9,7 +9,8 @@ import java.util.concurrent.TimeUnit
 open class BaseApiClient<T>(private val classT: Class<T>) {
 
     companion object{
-        const val BASE_URL = "https://jsonplaceholder.typicode.com"
+//        const val BASE_URL = "https://jsonplaceholder.typicode.com"
+        const val BASE_URL = "https://api.github.com/"
         const val CONNECTION_TIMEOUT: Long = 180L
         const val READ_TIMEOUT: Long = 180L
         const val WRITE_TIMEOUT: Long = 180L
