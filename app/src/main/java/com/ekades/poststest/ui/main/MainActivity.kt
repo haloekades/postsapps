@@ -129,6 +129,4 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
             return Intent(activity, MainActivity::class.java)
         }
     }
-
-    // add commite master konflik
 }
