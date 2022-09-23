@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/base_mamikos/src/main/java/com/ekades/poststest/core/dabang/helpers/BaseRender.kt" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_subscribe_topic.xml" value="0.21980895996093752" />
+        <entry key="app/src/main/res/layout/huawei_map_activity.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/notification.xml" value="0.6118820190429688" />
+        <entry key="lib_core_ui/src/main/res/drawable/ic_basic_place_holder.xml" value="0.2085" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
@@ -12,7 +22,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.21980895996093752" />
       </ProjectState>
     </option>
   </component>

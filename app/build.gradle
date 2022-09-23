@@ -16,6 +16,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: "kotlin-kapt"
 apply plugin: 'jacoco'
 apply from: "$rootDir/project_gradle/common_test.gradle"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.huawei.agconnect'
 
 android {
     compileSdkVersion builds.compileSdk
@@ -33,7 +35,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
-        applicationId "com.ekades.poststest"
+        applicationId "com.ekades.fcmpushnotification"
         minSdkVersion builds.minSdk
         targetSdkVersion builds.targetSdk
         versionCode builds.versionCode
@@ -112,4 +114,13 @@ dependencies {
     implementation "$lib.constraintLayout"
     implementation "$lib.rxAndroid"
     implementation "$lib.zoomage"
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx:20.1.0'
+
+    //map
+    implementation 'com.huawei.hms:maps:5.0.1.300'
+    //location
+    implementation 'com.huawei.hms:location:4.0.3.301'
 }

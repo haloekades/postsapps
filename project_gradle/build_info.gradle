@@ -1,6 +1,6 @@
 ext {
     builds = [
-            minSdk          : 16,
+            minSdk          : 21,
             compileSdk      : 30,
             targetSdk       : 30,
             versionCode     : 10000,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <string name="app_name">Posts Test</string>
+    <string name="app_name">FCM Push Notification</string>
     <string name="author">Author :</string>
     <string name="comments">Comments :</string>
     <string name="username_with_value"><![CDATA[<b>Username</b><br/>%s]]></string>
