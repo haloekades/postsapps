@@ -16,11 +16,11 @@
 
     <!--Green Color-->
     <color name="burnham">#003826</color>
-    <color name="kaitoke">#369d8f</color>
+    <color name="kaitoke">#004A2D</color>
     <color name="fun">#016034</color>
     <color name="spanish">#008742</color>
-<!--    <color name="brand">#1BAA56</color>-->
-    <color name="brand">#44bbaa</color>
+    <!--    <color name="brand">#1BAA56</color>-->
+    <color name="brand">#52bfb6</color><!--4db4ab-->
     <color name="deYork">#6ECF91</color>
     <color name="fringyFlower">#B8E4CA</color>
     <color name="honeydew">#D8EDE3</color>

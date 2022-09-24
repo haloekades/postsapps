@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTitleTextView"
+        style="@style/Title5"
+        android:layout_width="@dimen/spacing_x0"
+        android:layout_height="wrap_content"
+        android:textColor="@color/mineShaft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputDescriptionTextView"
+        style="@style/Body2"
+        android:layout_width="@dimen/spacing_x0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_x8"
+        android:textColor="@color/mineShaft"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTitleTextView"
+        tools:text="Description Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputEditText"
+        style="@style/InputFieldTextLarge"
+        android:layout_width="@dimen/spacing_x0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_x8"
+        android:singleLine="true"
+        android:textColorHint="@color/dustyGray"
+        android:textCursorDrawable="@drawable/bg_cursor_input_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputDescriptionTextView"
+        tools:hint="Placeholder"
+        tools:padding="@dimen/spacing_x12"
+        tools:textColor="@color/tundora" />
+
+    <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+        android:id="@+id/inputIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_x8"
+        android:layout_marginLeft="@dimen/spacing_x8"
+        app:icon="@drawable/ic_basic_search"
+        app:iconColorTint="@color/tundora"
+        app:iconHolderSize="medium"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintStart_toStartOf="@id/inputEditText"
+        app:layout_constraintTop_toTopOf="@id/inputEditText" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/inputRightIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_x8"
+        android:layout_marginRight="@dimen/spacing_x8"
+        android:tint="@color/tundora"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintEnd_toEndOf="@+id/inputEditText"
+        app:layout_constraintTop_toTopOf="@id/inputEditText"
+        tools:src="@drawable/ic_close_round" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputLabelTextView"
+        style="@style/Label2"
+        android:layout_width="@dimen/spacing_x0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_x8"
+        android:textColor="@color/dustyGray"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEditText"
+        tools:text="Label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

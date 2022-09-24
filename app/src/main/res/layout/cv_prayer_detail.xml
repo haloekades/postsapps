@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brand">
+
+    <TextView
+        android:id="@+id/prayerNameTextView"
+        style="@style/Heading3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_x16"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/readCountTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/readCountTextView"
+        style="@style/Body2Italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_x4"
+        android:layout_marginLeft="@dimen/spacing_x4"
+        android:layout_marginEnd="@dimen/spacing_x20"
+        android:layout_marginRight="@dimen/spacing_x20"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/prayerNameTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContentView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_x20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/prayerNameTextView">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/spacing_x64">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/arabicHeaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="arabicHeaderTextView,arabicHeaderMeaningTextView" />
+
+                <TextView
+                    android:id="@+id/arabicHeaderTextView"
+                    style="@style/ArabicBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x20"
+                    android:gravity="center"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/arabicHeaderMeaningTextView"
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:gravity="center"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@+id/arabicHeaderTextView" />
+
+                <TextView
+                    android:id="@+id/arabicTextView"
+                    style="@style/ArabicBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x36"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@id/arabicHeaderMeaningTextView" />
+
+                <TextView
+                    android:id="@+id/latinTextView"
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@+id/arabicTextView" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/meanView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="dividerMean,bgMeanView, meanTextView" />
+
+                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                    android:id="@+id/dividerMean"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:background="@color/mineShaft"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/latinTextView" />
+
+                <TextView
+                    android:id="@+id/meanTextView"
+                    style="@style/Title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x12"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:text="@string/title_mean"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@id/dividerMean" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgMeanView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x12"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:layout_marginBottom="@dimen/spacing_x64"
+                    android:padding="@dimen/spacing_x12"
+                    app:layout_constraintTop_toBottomOf="@+id/meanTextView">
+
+                    <TextView
+                        android:id="@+id/meanValueTextView"
+                        style="@style/Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/spacing_x8"
+                        android:gravity="center"
+                        android:textColor="@color/mineShaft"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/benefitsView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="dividerBenefits,bgBenefitsView, benefitsTextView" />
+
+                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                    android:id="@+id/dividerBenefits"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:background="@color/mineShaft"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgMeanView" />
+
+                <TextView
+                    android:id="@+id/benefitsTextView"
+                    style="@style/Title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:text="@string/title_benefits"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@id/dividerBenefits" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgBenefitsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x12"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:layout_marginBottom="@dimen/spacing_x16"
+                    android:padding="@dimen/spacing_x12"
+                    app:layout_constraintTop_toBottomOf="@+id/benefitsTextView">
+
+                    <TextView
+                        android:id="@+id/benefitsValueTextView"
+                        style="@style/Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/spacing_x8"
+                        android:gravity="center"
+                        android:textColor="@color/mineShaft"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/sourceView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="dividerSource, sourceTextView" />
+
+                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                    android:id="@+id/dividerSource"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:layout_marginBottom="@dimen/spacing_x64"
+                    android:background="@color/mineShaft"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgBenefitsView" />
+
+                <TextView
+                    android:id="@+id/sourceTextView"
+                    style="@style/Body3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginVertical="@dimen/spacing_x20"
+                    android:gravity="center"
+                    android:textColor="@color/mineShaft"
+                    app:layout_constraintTop_toBottomOf="@+id/dividerSource" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

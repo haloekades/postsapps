@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/postapps.iml" filepath="$PROJECT_DIR$/.idea/modules/postapps.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postapps.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postapps.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postapps.lib_application.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postapps.lib_application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postapps.lib_core_network.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postapps.lib_core_network.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postapps.lib_core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postapps.lib_core_test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postapps.lib_core_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postapps.lib_core_ui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postapps.lib_ui_asset.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postapps.lib_ui_asset.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postapps.lib_ui_component.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postapps.lib_ui_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/postsapps.iml" filepath="$PROJECT_DIR$/.idea/modules/postsapps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postsapps.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postsapps.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postsapps.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postsapps.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postsapps.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postsapps.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/postsapps.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/postsapps.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_application/postsapps.lib_application.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_network/postsapps.lib_core_network.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_test/postsapps.lib_core_test.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_core_ui/postsapps.lib_core_ui.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_asset/postsapps.lib_ui_asset.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_ui_component/postsapps.lib_ui_component.unitTest.iml" />
     </modules>
   </component>
 </project>

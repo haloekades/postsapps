@@ -4,4 +4,5 @@ apply from: "$rootDir/project_gradle/common_test.gradle"
 dependencies {
     implementation project(":lib_application")
     implementation project(":lib_core_ui")
+    implementation "$lib.glide"
 }

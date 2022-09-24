@@ -28,7 +28,7 @@ import org.jetbrains.anko.backgroundColor
 class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
 
     private val postsAdapter by lazy {
-        postsRecyclerView?.linearLayoutAdapter(this)
+//        postsRecyclerView?.linearLayoutAdapter(this)
     }
 
     init {
@@ -42,10 +42,10 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
     }
 
     private fun setupToolbarView() {
-        toolbar.title = getString(R.string.title_app_name)
-        toolbar.setTitleTextColor(ColorPalette.WHITE)
-        toolbar.backgroundColor = ColorPalette.BRAND
-        setSupportActionBar(toolbar);
+//        toolbar.title = getString(R.string.title_app_name)
+//        toolbar.setTitleTextColor(ColorPalette.WHITE)
+//        toolbar.backgroundColor = ColorPalette.BRAND
+//        setSupportActionBar(toolbar);
     }
 
     private fun getMainData() {
@@ -75,7 +75,7 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
     private fun showLoadingView() {
         val loadingComponents: MutableList<Component<*>> = mutableListOf()
         loadingComponents.addAll(getLoadingComponents())
-        postsAdapter?.setNewList(loadingComponents)
+//        postsAdapter?.setNewList(loadingComponents)
     }
 
     private fun getLoadingComponents(): MutableList<Component<RectangleSkeletonCV>> {
@@ -108,7 +108,7 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
                 }.withIdentifier("${it.id}".hashCode().toLong())
             }.toMutableList()
 
-        postsAdapter?.diffCalculateAdapter(postsComponent)
+//        postsAdapter?.diffCalculateAdapter(postsComponent)
     }
 
     private fun openPostDetail(post: Post?) {

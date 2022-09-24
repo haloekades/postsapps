@@ -1,0 +1,144 @@
+[
+  {
+    "id": 0,
+    "name": "Istigfar",
+    "arabic": "أَسْتَغْفِرُ اللهَ الْعَظِـيْمِ الَّذِيْ لَااِلَهَ اِلَّا هُوَ الْحَيُّ الْقَيُّوْمُ وَأَتُوْبُ إِلَيْهِ",
+    "latin": "Astaghfirullah hal'adzim, aladzi laailaha illahuwal khayyul qoyyuumu wa atuubu ilaiih",
+    "arabic_meaning": "",
+    "read_count": 3
+  },
+  {
+    "id": 1,
+    "name": "",
+    "arabic": "لَاإِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِيْ وَيُمِيْتُ وَهُوَ عَلَى كُلِّ شَيْئٍ قَدِيْرٌِ",
+    "latin": "Laa ilaha illallah wakhdahu laa syarika lahu, lahul mulku walahul khamdu yukhyiiy wayumiitu wahuwa 'alaa kulli syai'innqodiir",
+    "arabic_meaning": "",
+    "read_count": 3
+  },
+  {
+    "id": 2,
+    "name": "Doa Perlindungan Dari Siksa Neraka",
+    "arabic": "اَللَّهُمَّ أَجِرْنِـى مِنَ النَّارِ",
+    "latin": "Allahumma ajirni minan-naar",
+    "arabic_meaning": "",
+    "read_count": 3
+  },
+  {
+    "id": 3,
+    "name": "Doa yang Dimaksudkan untuk Memuji Allah SWT",
+    "arabic": "للَّهُمَّ أَنْتَ السَّلاَمُ، وَمِنْكَ السَّلَامُ، وَإِلَيْكَ يَعُوْدُ السَّلَامُ فَحَيِّنَارَبَّنَا بِالسَّلَامِ وَاَدْخِلْنَا الْـجَنَّةَ دَارَ السَّلَامِ تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ يَا ذَاالْـجَلَالِ وَاْلإِكْرَام",
+    "latin": "Allahumma angtassalam, wamingkassalam, wa ilayka ya'uudussalam fakhayyina rabbanaa bissalaam wa-adkhilnaljannata darossalaam tabarokta rabbanaa wata'alayta yaa dzaljalaali wal ikraam",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 4,
+    "name": "Al Fatihah",
+    "arabic_header": "أَعُوْذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيْمِِ",
+    "arabic_header_meaning": "“Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.”",
+    "arabic": "بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ   ●   الْحَمْدُ لِلَّـهِ رَبِّ الْعَالَمِينَ    ●   الرَّحْمَـٰنِ الرَّحِيم    ●   مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ    ●   اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ    ●   صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ    ●   أمين",
+    "latin": "Bismillahir rohmanirro’hiim. Al’hamdulillahi robbil’aalamiin.Arro’hmanirro’him. Maliki yawmiddiin. Iyyaka na’budu wa iyyaka nasta’iin.Ihdinash-shiro tholmustaqiim. Shirotholladziina an’amta ‘alaihim ghoiril maghdhuubi ‘alaihim wala dholiin. Aamiin.",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 5,
+    "name": "Ayat Kursi",
+    "arabic": "اَللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+    "latin": "Allahu laa ilaaha illaa huwal hayyul qayyumm, laa ta`khuduhuu sinatun wa laa naum, lahuu maa fissamaawaati wa maa fil ardhi, man dzalladzii yasyfa'u 'indahuu illaa bi idznih, ya'lamu maa bainaa aidiihiim wa maa khalfahum, wa laa yuhiithuuna bi syai-in min 'ilmihii ilaa bimaa syaa-a, wa si'a kursiyyuhussamaawaati wal ardhi, wa laa ya-uuduhu hifzhuhumaa wa huswal 'aliyyul 'azhiim",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 6,
+    "name": "Tasbih",
+    "arabic": "سُبْحَانَ اللهِ",
+    "latin": "Subhanallah",
+    "arabic_meaning": "",
+    "read_count": 33
+  },
+  {
+    "id": 7,
+    "name": "Tahmid",
+    "arabic": "الْحَمْدُلِلهِ",
+    "latin": "Alhamdulillah",
+    "arabic_meaning": "",
+    "read_count": 33
+  },
+  {
+    "id": 8,
+    "name": "Takbir",
+    "arabic": "اللهُ اَكْبَرُ",
+    "latin": "Allahu akbar",
+    "arabic_meaning": "",
+    "read_count": 33
+  },
+  {
+    "id": 9,
+    "name": "Tahlil",
+    "arabic": "لَااِلٰهَ اِلَّا اللهُ",
+    "latin": "Lailaha illallah",
+    "arabic_meaning": "",
+    "read_count": 33
+  },
+  {
+    "id": 10,
+    "name": "",
+    "arabic": "بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ. اَلْحَمْدُ ِللهِ رَبِّ الْعَالَمِيْنَ. حَمْدًا يُوَافِىْ نِعَمَهُ وَيُكَافِئُ مَزِيْدَهُ. يَارَبَّنَالَكَ الْحَمْدُ وَلَكَ الشُّكْرُ كَمَا يَنْبَغِىْ لِجَلاَلِ وَجْهِكَ وَعَظِيْمِ سُلْطَانِكَ",
+    "latin": "Bismillaahirrahmaanirrahiim. alhamdulillaahi rabbil ‘aalamiin. hamdayyu-waafii ni’amahuuwayukaafi’u maziidah. yaa rabbanaa lakalhamdu wa lakasy syukruka-maa yambaghiilijalaaliwajhika wa ‘azhiimisul-thaanik",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 11,
+    "name": "",
+    "arabic": "اَللّٰهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلى آلِ سَيِّدِنَا مُحَمَّدٍ. صَلاَةً تُنْجِيْنَابِهَا مِنْ جَمِيْعِ اْلاَهْوَالِ وَاْلآفَاتِ. وَتَقْضِىْ لَنَابِهَا جَمِيْعَ الْحَاجَاتِ.وَتُطَهِّرُنَا بِهَا مِنْ جَمِيْعِ السَّيِّئَاتِ. وَتَرْفَعُنَابِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ. وَتُبَلِّغُنَا بِهَا اَقْصَى الْغَيَاتِ مِنْ جَمِيْعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَبَعْدَ الْمَمَاتِ اِنَّهُ سَمِيْعٌ قَرِيْبٌ مُجِيْبُ الدَّعَوَاتِ وَيَاقَاضِىَ الْحَاجَاتِ",
+    "latin": "Allaahumma shalliwasallim ’ala sayyidinaa muhammadiw wa ‘ala aali sayyidinaa muhammad shalaatan tun jihnaa bihatsa min jamii’il ahwaali wal aafaat. wa taqdhii lanaa bihaa jamii’al hajaat. wa tuthahhirunaa bihaa min jamits sayyi’aat. wa atarfa ‘unaabihaa ‘indaka ‘aladdarajaat. wa tuballighunaa bihaa aqshal ghaayaati minjamii’il khairaatifil hayaati wa ba’dal mamaat. innahu samii’un qariibum mujiibudda’awaat wayaa qaadhiyal hajaat",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 12,
+    "name": "",
+    "arabic": "اَللّٰهُمَّ اِنَّا نَسْئَلُكَ سَلاَمَةً فِى الدِّيْنِ وَالدُّنْيَا وَاْلآخِرَةِ وَعَافِيَةً فِى الْجَسَدِ وَصِحَّةً فِى الْبَدَنِ وَزِيَادَةً فِى الْعِلْمِ وَبَرَكَةً فِى الرِّزْقِ وَتَوْبَةً قَبْلَ الْمَوْتِ وَرَحْمَةً عِنْدَ الْمَوْتِ وَمَغْفِرَةً بَعْدَ الْمَوْتِ. اَللّٰهُمَّ هَوِّنْ عَلَيْنَا فِىْ سَكَرَاتِ الْمَوْتِ وَالنَّجَاةَ مِنَ النَّارِ وَالْعَفْوَ عِنْدَ الْحِسَابِ",
+    "latin": "Allaahumma innaa nas’aluka salaamatan fiddiini waddun-yaa wa aakhirah. wa ‘aafiyatan fil jasadi wa shihhatan fil badani wa ziyaadatan fil’ilmi wa barakatan firrizqi wa taubatan qablal maut wa rahmatan ‘indalmaut wa maghfiratan ba’dal maut. allaahumma hawwin ‘alainaa fii sakaraatil maut wan najaata minannaari wal ‘afwa ‘indal hisaab.",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 13,
+    "name": "",
+    "arabic": "اَللّٰهُمَّ اِنَّا نَعُوْذُبِكَ مِنَ الْعَجْزِ وَالْكَسَلِ وَالْبُخْلِ وَالْهَرَمِ وَعَذَابِ الْقَبْرِ",
+    "latin": "Allaahumma innaa na ‘uudzubika minal‘ajzi wal kasali wal bukhli wal harami wa ‘adzaabil qabri",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 14,
+    "name": "",
+    "arabic": "اَللّٰهُمَّ اِنَّا نَعُوْذُبِكَ مِنْ عِلْمٍ لاَيَنْفَعُ وَمِنْ قَلْبٍ لاَيَخْشَعُ وَمِنْ نَفْسٍ لاَتَشْبَعُ وَمِنْ دَعْوَةٍ لاَيُسْتَجَابُ لَهَا",
+    "latin": "Allahummaa innaa na’uudzubika min’ilmin laa yanfa’u wa min qalbii laa yakhsya’u wa min nafsin laa tasyaba’u wa min da’watin laa yustajaabu lahaa",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 15,
+    "name": "",
+    "arabic": "رَبَّنَااغْفِرْلَنَا ذُنُوْبَنَا وَلِوَالِدِيْنَا وَلِمَشَايِخِنَا وَلِمُعَلِّمِيْنَا وَلِمَنْ لَهُ حَقٌّ عَلَيْنَا وَلِمَنْ اَحَبَّ وَاَحْسَنَ اِلَيْنَا وَلِكَافَّةِ الْمُسْلِمِيْنَ اَجْمَعِيْنَ",
+    "latin": "Rabbanagh firlanaa dzunuubanaa wa liwaalidiinaa walimasyaayikhinaa wa limu’alli-miinaa wa liman lahuu haqqun ‘alainaa wa liman ahabba wa ahsana ilainaa wa likaaffatil mus limiin ajma’iin",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 16,
+    "name": "",
+    "arabic": "رَبَّنَا تَقَبَّلْ مِنَّا اِنَّكَ اَنْتَ السَّمِيْعُ الْعَلِيْمُ وَتُبْ عَلَيْنَا اِنَّكَ اَنْتَ التَّوَّابُ الرَّحِيْمُ",
+    "latin": "Rabbanaa taqabbal minnaa innaka antas samii’ul ’aliim, wa tub’alainaa innaka antat tawwabur rahiim",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 17,
+    "name": "",
+    "arabic": "رَبَّنَا أَتِنَا فِى الدُّنْيَا حَسَنَةً وَفِي اْلأَخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+    "latin": "Rabbanaa aatinaa fiduunnyaa hasanah, wa fil aakhirati hasanah, waqinaa ‘adzaa ban naar",
+    "arabic_meaning": ""
+  },
+  {
+    "id": 18,
+    "name": "",
+    "arabic": "وَصَلَّى اللهُ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمَ وَالْحَمْدُ ِللهِ رَبِّ الْعَالَمِيْنَ",
+    "latin": "Washallallahu ‘alaa sayyidinaa muhammadin wa’alaa aalihiwa shahbihiiwa sallam, wal hamdu lillaahirabbil ‘aalamiin",
+    "arabic_meaning": ""
+  }
+]

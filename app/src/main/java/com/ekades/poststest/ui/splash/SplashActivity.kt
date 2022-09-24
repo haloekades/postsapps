@@ -24,10 +24,10 @@ class SplashActivity : AppCompatActivity() {
     private fun runSplash() {
         splashJob = coroutineScope.launch {
             delay(SPLASH_DELAY)
-//            gotoMain()
-            VidioSDK.downloadEpisode(0) { downloadStatus ->
-                print("downloadStatus : $downloadStatus")
-            }
+            gotoMain()
+//            VidioSDK.downloadEpisode(0) { downloadStatus ->
+//                print("downloadStatus : $downloadStatus")
+//            }
         }
     }
 

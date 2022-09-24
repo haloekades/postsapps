@@ -4,4 +4,5 @@
     <dimen name="corner_medium">4dp</dimen>
     <dimen name="corner_large">8dp</dimen>
     <dimen name="corner_xlarge">16dp</dimen>
+    <dimen name="corner_xxlarge">20dp</dimen>
 </resources>

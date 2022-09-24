@@ -11,10 +11,12 @@
     <dimen name="text_dimen_16">16sp</dimen>
     <dimen name="text_dimen_14">14sp</dimen>
     <dimen name="text_dimen_12">12sp</dimen>
+    <dimen name="text_dimen_36">36sp</dimen>
 
     <!--LINE HEIGHT-->
     <dimen name="text_line_height_80">80sp</dimen>
     <dimen name="text_line_height_60">60sp</dimen>
+    <dimen name="text_line_height_70">70sp</dimen>
     <dimen name="text_line_height_40">40sp</dimen>
     <dimen name="text_line_height_36">36sp</dimen>
     <dimen name="text_line_height_32">32sp</dimen>

@@ -35,7 +35,7 @@ import kotlin.math.log
 class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
 
     private val postsAdapter by lazy {
-        postsRecyclerView?.linearLayoutAdapter(this)
+//        postsRecyclerView?.linearLayoutAdapter(this)
     }
 
     init {
@@ -49,10 +49,10 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
     }
 
     private fun setupToolbarView() {
-        toolbar.title = getString(R.string.title_app_name)
-        toolbar.setTitleTextColor(ColorPalette.WHITE)
-        toolbar.backgroundColor = ColorPalette.BRAND
-        setSupportActionBar(toolbar);
+//        toolbar.title = getString(R.string.title_app_name)
+//        toolbar.setTitleTextColor(ColorPalette.WHITE)
+//        toolbar.backgroundColor = ColorPalette.BRAND
+//        setSupportActionBar(toolbar);
     }
 
     private fun observeViewModel() {
@@ -76,7 +76,7 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
     private fun showLoadingView() {
         val loadingComponents: MutableList<Component<*>> = mutableListOf()
         loadingComponents.addAll(getLoadingComponents())
-        postsAdapter?.setNewList(loadingComponents)
+//        postsAdapter?.setNewList(loadingComponents)
     }
 
     private fun getLoadingComponents(): MutableList<Component<RectangleSkeletonCV>> {
@@ -108,7 +108,7 @@ class MainV2Activity : CoreActivity<MainV2ViewModel>(MainV2ViewModel::class) {
                 }.withIdentifier("${it.id}".hashCode().toLong())
             }.toMutableList()
 
-        postsAdapter?.diffCalculateAdapter(postsComponent)
+//        postsAdapter?.diffCalculateAdapter(postsComponent)
     }
 
     companion object {

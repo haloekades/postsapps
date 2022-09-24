@@ -8,5 +8,6 @@ enum class CornerRadius(val value: Int) {
     SMALL(R.dimen.corner_small.asDimen()),
     MEDIUM(R.dimen.corner_medium.asDimen()),
     LARGE(R.dimen.corner_large.asDimen()),
-    XLARGE(R.dimen.corner_xlarge.asDimen())
+    XLARGE(R.dimen.corner_xlarge.asDimen()),
+    XXLARGE(R.dimen.corner_xxlarge.asDimen())
 }

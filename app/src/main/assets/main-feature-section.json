@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Dzikir Pagi",
+    "json_file": "morning-dhikr.json",
+    "is_show_detail": true
+  },
+  {
+    "id": 1,
+    "name": "Dzikir Petang",
+    "json_file": "evening-dhikr.json",
+    "is_show_detail": true
+  },
+  {
+    "id": 2,
+    "name": "Doa Harian",
+    "json_file": "daily-prayer.json",
+    "is_show_detail": false
+  },
+  {
+    "id": 3,
+    "name": "Doa Setelah Sholat",
+    "json_file": "prayer-after-prayer.json",
+    "is_show_detail": true
+  }
+]
+

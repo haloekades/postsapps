@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageHolder">
+        <attr name="icon" format="reference" />
+        <attr name="iconUrl" format="string" />
+        <attr name="iconColorTint" format="color" />
+        <attr name="iconHolderSize" format="enum">
+            <enum name="xsmall" value="1" />
+            <enum name="small" value="2" />
+            <enum name="medium" value="3" />
+            <enum name="large" value="4" />
+            <enum name="xlarge" value="5" />
+            <enum name="xxlarge" value="6" />
+            <enum name="xxxlarge" value="7" />
+        </attr>
+    </declare-styleable>
+</resources>

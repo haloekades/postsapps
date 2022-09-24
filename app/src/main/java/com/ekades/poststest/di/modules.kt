@@ -1,16 +1,16 @@
 package com.ekades.poststest.di
 
-import com.carlosgub.coroutines.features.books.domain.interactor.GetPostByIdInteractor
-import com.carlosgub.coroutines.features.books.domain.interactor.GetUserByLoginInteractor
-import com.ekades.poststest.features.post.domain.interactor.GetPostsInteractor
-import com.ekades.poststest.features.post.data.dataSource.PostRestDataStore
-import com.ekades.poststest.features.post.data.repository.PostRepositoryImpl
-import com.ekades.poststest.features.post.domain.repository.PostRepository
+import com.ekades.poststest.features.main.MainViewModel
+import com.ekades.poststest.features.networksV2.data.dataSource.PrayerScheduleDataStore
+import com.ekades.poststest.features.networksV2.data.repository.PrayerScheduleRepositoryImpl
+import com.ekades.poststest.features.networksV2.domain.interactor.GetAllCityInteractor
+import com.ekades.poststest.features.networksV2.domain.interactor.GetPrayerScheduleTodayInteractor
+import com.ekades.poststest.features.networksV2.domain.repository.PrayerScheduleRepository
 import com.ekades.poststest.features.post.presentation.viewModels.MainV2ViewModel
-import com.ekades.poststest.features.users.data.dataSource.UserRestDataStore
-import com.ekades.poststest.features.users.data.repository.UserRepositoryImpl
-import com.ekades.poststest.features.users.domain.interactor.GetUsersInteractor
-import com.ekades.poststest.features.users.domain.repository.UserRepository
+import com.ekades.poststest.features.prayerdetail.PrayerDetailViewModel
+import com.ekades.poststest.features.prayerlist.PrayerListViewModel
+import com.ekades.poststest.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailViewModel
+import com.ekades.poststest.features.prayerschedule.searchcity.SearchCityViewModel
 import com.ekades.poststest.features.users.presentation.viewModels.UserListViewModel
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
@@ -26,6 +26,31 @@ private val postModule = module {
     }
     //endregion
 
+    //Teman Doa
+
+    viewModel {
+        MainViewModel()
+    }
+
+    viewModel {
+        PrayerDetailViewModel()
+    }
+
+    viewModel {
+        PrayerListViewModel()
+    }
+
+    viewModel {
+        SearchCityViewModel(get())
+    }
+
+    viewModel {
+        PrayerScheduleDetailViewModel(get())
+    }
+
+    //end Teman Doa
+
+
     //region Interactor
 //    single {
 //        GetPostsInteractor(
@@ -37,11 +62,18 @@ private val postModule = module {
 //            get()
 //        )
 //    }
+//    single {
+//        GetUsersInteractor(get())
+//    }
+//    single {
+//        GetUserByLoginInteractor(get())
+//    }
     single {
-        GetUsersInteractor(get())
+        GetAllCityInteractor(get())
     }
+
     single {
-        GetUserByLoginInteractor(get())
+        GetPrayerScheduleTodayInteractor(get())
     }
     //endregion
 
@@ -49,8 +81,11 @@ private val postModule = module {
 //    single<PostRepository> {
 //        PostRepositoryImpl(get())
 //    }
-    single<UserRepository> {
-        UserRepositoryImpl(get())
+//    single<UserRepository> {
+//        UserRepositoryImpl(get())
+//    }
+    single<PrayerScheduleRepository> {
+        PrayerScheduleRepositoryImpl(get())
     }
     //endregion
 
@@ -58,8 +93,11 @@ private val postModule = module {
 //    single {
 //        PostRestDataStore()
 //    }
+//    single {
+//        UserRestDataStore()
+//    }
     single {
-        UserRestDataStore()
+        PrayerScheduleDataStore()
     }
     //endregion
 }

@@ -6,6 +6,7 @@ import com.ekades.poststest.lib.core.ui.foundation.corner.CornerRadius.NONE
 import com.ekades.poststest.lib.core.ui.foundation.corner.CornerRadius.SMALL
 import com.ekades.poststest.lib.core.ui.foundation.corner.CornerRadius.MEDIUM
 import com.ekades.poststest.lib.core.ui.foundation.corner.CornerRadius.XLARGE
+import com.ekades.poststest.lib.ui.asset.attributes.IconSize
 
 /**
  * Returns [CornerBackgroundSmall] with 2dp Corners
@@ -42,3 +43,6 @@ class CornerBackgroundHalfLargeRounded : DynamicCornerBackground(LARGE, NONE, NO
  * Returns [CornerBackgroundHalfXLargeRounded] with dynamic rounded corner [CornerRadius]
  */
 class CornerBackgroundHalfXLargeRounded : DynamicCornerBackground(XLARGE, NONE, NONE, XLARGE)
+
+class CornerBackroundTopMedium : DynamicCornerBackground(CornerRadius.XXLARGE,
+    CornerRadius.XXLARGE, NONE, NONE)
