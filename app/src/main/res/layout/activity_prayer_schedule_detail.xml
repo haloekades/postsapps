@@ -39,14 +39,48 @@
                     android:paddingHorizontal="@dimen/spacing_x16"
                     android:paddingBottom="@dimen/spacing_x20">
 
-                    <TextView
-                        android:id="@+id/titleCollapsingToolbarTextView"
-                        style="@style/Heading2"
-                        android:layout_width="wrap_content"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clCity"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_marginTop="@dimen/spacing_x16"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                            android:id="@+id/icPlace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvCity"
+                            style="@style/Title5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            android:textColor="@color/tundora"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tvChangeCity"
+                            app:layout_constraintStart_toEndOf="@id/icPlace"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvChangeCity"
+                            style="@style/Label1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            android:text="@string/action_change_location"
+                            android:textColor="@color/brand"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,13 +100,61 @@
                 android:id="@+id/mainContentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_x16">
+                android:paddingVertical="@dimen/spacing_x16">
+
+                <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                    android:id="@+id/beforeIconCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_x24"
+                    android:layout_marginLeft="@dimen/spacing_x24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                    android:id="@+id/afterIconCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_x24"
+                    android:layout_marginRight="@dimen/spacing_x24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/shownMonthTextView"
+                    style="@style/Title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/brand"
+                    app:layout_constraintBottom_toBottomOf="@id/afterIconCV"
+                    app:layout_constraintLeft_toRightOf="@id/beforeIconCV"
+                    app:layout_constraintRight_toLeftOf="@id/afterIconCV"
+                    app:layout_constraintTop_toTopOf="@id/afterIconCV" />
+
+                <com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
+                    android:id="@+id/shownMonthskeletonCV"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/spacing_x32"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/afterIconCV"
+                    app:layout_constraintLeft_toRightOf="@id/beforeIconCV"
+                    app:layout_constraintRight_toLeftOf="@id/afterIconCV"
+                    app:layout_constraintTop_toTopOf="@id/afterIconCV" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mainRecyclerView"
+                    android:id="@+id/rvSelectedDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginTop="@dimen/spacing_x20"
+                    app:layout_constraintTop_toBottomOf="@id/afterIconCV" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPrayerTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginTop="@dimen/spacing_x20"
+                    app:layout_constraintTop_toBottomOf="@id/rvSelectedDate" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

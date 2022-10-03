@@ -12,15 +12,23 @@ import com.ekades.poststest.lib.core.ui.extension.*
 import com.ekades.poststest.lib.core.ui.foundation.background.CornerBackroundTopMedium
 import com.ekades.poststest.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.poststest.lib.core.ui.foundation.component.Component
+import com.ekades.poststest.lib.core.ui.foundation.component.Rectangle
 import com.ekades.poststest.lib.core.ui.foundation.container.ConstraintContainer
+import com.ekades.poststest.lib.core.ui.foundation.container.LinearContainer
+import com.ekades.poststest.lib.core.ui.foundation.spacing.Spacing
+import com.ekades.poststest.lib.ui.asset.extension.dp
+import com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
 import kotlinx.android.synthetic.main.activity_search_city.*
+import kotlinx.android.synthetic.main.activity_search_city.mainContentView
+import kotlinx.android.synthetic.main.activity_search_city.rvPrayerTime
+import kotlinx.android.synthetic.main.activity_search_city.toolbarCV
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel::class) {
 
     private val adapter by lazy {
-        mainRecyclerView?.linearLayoutAdapter(this)
+        rvPrayerTime?.linearLayoutAdapter(this)
     }
 
     init {
@@ -58,6 +66,12 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
                 renderList(this)
             }
         })
+
+        viewModel.showLoading.observe(this, Observer { isShow ->
+            if (isShow) {
+                showLoadingView()
+            }
+        })
     }
 
     private fun showToolbar() {
@@ -70,7 +84,7 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
     }
 
     private fun setupRecyclerView() {
-        mainRecyclerView.infiniteScrollListener(
+        rvPrayerTime.infiniteScrollListener(
             visibleThreshold = VISIBLE_THRESHOLD,
             loadMoreListener = {
                 if (inputFieldCV.getInputText().isBlank()) {
@@ -86,8 +100,8 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
                 CityListItemCV(this)
             }) {
                 city = item
-                onItemClickListener = { cityId ->
-                    onSelectedCity(cityId)
+                onItemClickListener = { cityId, cityName ->
+                    onSelectedCity(cityId, cityName)
                 }
             }.setIdentifier(item.id)
         }.toMutableList()
@@ -95,11 +109,40 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
         adapter?.diffCalculateAdapter(components)
     }
 
-    private fun onSelectedCity(cityId: String) {
-        startActivity(PrayerScheduleDetailActivity.newIntent(this, cityId))
+    private fun showLoadingView() {
+        val loadingComponents: MutableList<Component<*>> = mutableListOf()
+        loadingComponents.addAll(getLoadingPrayerTimeComponents())
+        adapter?.setNewList(loadingComponents)
+    }
+
+    private fun getLoadingPrayerTimeComponents(): MutableList<Component<RectangleSkeletonCV>> {
+        val component: MutableList<Component<RectangleSkeletonCV>> = arrayListOf()
+        for (i in 0 until 10) {
+            component.add(LinearContainer.newComponent({
+                RectangleSkeletonCV(this)
+            }) {
+                height = 70.dp()
+                componentMargin = Rectangle(
+                    vertical = Spacing.x4,
+                    horizontal = Spacing.x12
+                )
+            }.setIdentifier("loading-$i"))
+        }
+
+        return component
+    }
+
+    private fun onSelectedCity(cityId: String, cityName: String) {
+        val intent = Intent()
+        intent.putExtra(EXTRA_CITY_ID, cityId)
+        intent.putExtra(EXTRA_CITY_NAME, cityName)
+        setResult(RESULT_OK, intent)
+        finish()
     }
 
     companion object {
+        const val EXTRA_CITY_ID = "extra_city_id"
+        const val EXTRA_CITY_NAME = "extra_city_name"
         const val VISIBLE_THRESHOLD = 20
 
         @JvmStatic

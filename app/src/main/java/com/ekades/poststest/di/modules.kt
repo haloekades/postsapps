@@ -4,6 +4,7 @@ import com.ekades.poststest.features.main.MainViewModel
 import com.ekades.poststest.features.networksV2.data.dataSource.PrayerScheduleDataStore
 import com.ekades.poststest.features.networksV2.data.repository.PrayerScheduleRepositoryImpl
 import com.ekades.poststest.features.networksV2.domain.interactor.GetAllCityInteractor
+import com.ekades.poststest.features.networksV2.domain.interactor.GetPrayerScheduleMonthlyInteractor
 import com.ekades.poststest.features.networksV2.domain.interactor.GetPrayerScheduleTodayInteractor
 import com.ekades.poststest.features.networksV2.domain.repository.PrayerScheduleRepository
 import com.ekades.poststest.features.post.presentation.viewModels.MainV2ViewModel
@@ -29,7 +30,7 @@ private val postModule = module {
     //Teman Doa
 
     viewModel {
-        MainViewModel()
+        MainViewModel(get())
     }
 
     viewModel {
@@ -74,6 +75,10 @@ private val postModule = module {
 
     single {
         GetPrayerScheduleTodayInteractor(get())
+    }
+
+    single {
+        GetPrayerScheduleMonthlyInteractor(get())
     }
     //endregion
 

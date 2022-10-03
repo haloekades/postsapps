@@ -128,6 +128,14 @@
         <item name="fontWeight">@integer/text_weight_400</item>
     </style>
 
+    <style name="Body2BoldItalic" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/lato_bold_italic</item>
+        <item name="android:fontFamily">@font/lato_bold_italic</item>
+        <item name="android:textSize">@dimen/text_dimen_16</item>
+        <item name="lineHeight">@dimen/text_line_height_24</item>
+        <item name="fontWeight">@integer/text_weight_400</item>
+    </style>
+
     <style name="Body3" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/lato_bold</item>
         <item name="android:fontFamily">@font/lato_bold</item>

@@ -45,7 +45,7 @@
                 android:padding="@dimen/spacing_x16">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mainRecyclerView"
+                    android:id="@+id/rvPrayerTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent" />

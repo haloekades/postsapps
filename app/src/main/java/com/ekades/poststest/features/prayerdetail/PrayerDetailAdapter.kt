@@ -17,6 +17,7 @@ import com.ekades.poststest.lib.core.ui.foundation.background.CornerBackgroundLa
 import com.ekades.poststest.lib.core.ui.foundation.background.CornerBackroundTopMedium
 import com.ekades.poststest.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.poststest.lib.ui.component.misc.DividerCV
+import com.ekades.poststest.lib.ui.component.selection.CheckBoxCV
 
 class PrayerDetailAdapter(private val data: List<PrayerItem>?) : PagerAdapter() {
     override fun isViewFromObject(view: View, obj: Any): Boolean = view == obj
@@ -53,6 +54,15 @@ class PrayerDetailAdapter(private val data: List<PrayerItem>?) : PagerAdapter() 
         val sourceView = layout.findViewById<Group>(R.id.sourceView)
         val dividerSource = layout.findViewById<DividerCV>(R.id.dividerSource)
         val sourceTextView = layout.findViewById<TextView>(R.id.sourceTextView)
+
+        val cbShowLatin = layout.findViewById<CheckBoxCV>(R.id.cbShowLatin)
+
+        cbShowLatin.bind {
+            isChecked = false
+            onCheckChangedListener = { checked ->
+                indonesianTextView.isVisible = checked
+            }
+        }
 
 
         val prayer = data?.getOrNull(position)

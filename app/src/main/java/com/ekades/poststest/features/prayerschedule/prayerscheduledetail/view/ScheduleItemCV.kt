@@ -6,8 +6,8 @@ import android.view.View
 import com.ekades.poststest.R
 import com.ekades.poststest.features.prayerschedule.prayerscheduledetail.model.ScheduleItem
 import com.ekades.poststest.lib.core.ui.foundation.container.ConstraintContainer
-import com.ekades.poststest.lib.ui.component.misc.DividerCV
 import kotlinx.android.synthetic.main.cv_schedule_item.view.*
+import org.jetbrains.anko.backgroundColor
 
 class ScheduleItemCV @JvmOverloads constructor(
     context: Context,
@@ -22,9 +22,6 @@ class ScheduleItemCV @JvmOverloads constructor(
     init {
         View.inflate(context, R.layout.cv_schedule_item, this)
         setContainerParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        dividerCV.bind {
-            dividerStyle = DividerCV.DividerStyle.STRAIGHT
-        }
     }
 
     override fun initState(): State = State()
@@ -34,6 +31,7 @@ class ScheduleItemCV @JvmOverloads constructor(
             scheduleItem?.apply {
                 nameTextView.text = name
                 timeTextView.text = time
+                backgroundColor = bgColor
             }
         }
     }

@@ -19,7 +19,7 @@
               <option value="$MODULE_DIR$/../../../lib_core_test/build/intermediates/compile_library_classes_jar/debug/classes.jar" />
             </array>
           </option>
-          <option name="languageVersion" value="1.3" />
+          <option name="languageVersion" value="1.6" />
           <option name="apiVersion" value="1.3" />
           <option name="pluginOptions">
             <array>

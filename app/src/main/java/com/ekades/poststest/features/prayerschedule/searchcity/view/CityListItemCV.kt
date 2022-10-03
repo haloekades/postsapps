@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.ekades.poststest.R
 import com.ekades.poststest.features.prayerschedule.searchcity.model.CityItem
+import com.ekades.poststest.lib.core.ui.extension.capitalizeWords
 import com.ekades.poststest.lib.core.ui.foundation.container.ConstraintContainer
 import com.ekades.poststest.lib.ui.component.misc.DividerCV
 import kotlinx.android.synthetic.main.cv_prayer_list_item.view.*
@@ -17,7 +18,7 @@ class CityListItemCV @JvmOverloads constructor(
 
     class State {
         var city: CityItem? = null
-        var onItemClickListener: ((cityId: String) -> Unit)? = null
+        var onItemClickListener: ((cityId: String, cityName: String) -> Unit)? = null
     }
 
     init {
@@ -33,9 +34,9 @@ class CityListItemCV @JvmOverloads constructor(
     override fun render(state: State) {
         with(state) {
             city?.apply {
-                nameTextView.text = lokasi
+                nameTextView.text = lokasi.capitalizeWords
                 setOnClickListener {
-                    onItemClickListener?.invoke(id)
+                    onItemClickListener?.invoke(id, lokasi)
                 }
             }
         }

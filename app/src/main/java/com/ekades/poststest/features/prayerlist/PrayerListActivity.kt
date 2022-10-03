@@ -18,7 +18,7 @@ import com.ekades.poststest.lib.core.ui.foundation.container.ConstraintContainer
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_prayer_list.appBar
 import kotlinx.android.synthetic.main.activity_prayer_list.mainContentView
-import kotlinx.android.synthetic.main.activity_prayer_list.mainRecyclerView
+import kotlinx.android.synthetic.main.activity_prayer_list.rvPrayerTime
 import kotlinx.android.synthetic.main.activity_prayer_list.titleCollapsingToolbarTextView
 import kotlinx.android.synthetic.main.activity_prayer_list.toolbarCV
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +28,7 @@ import kotlin.math.abs
 class PrayerListActivity : CoreActivity<PrayerListViewModel>(PrayerListViewModel::class) {
 
     private val adapter by lazy {
-        mainRecyclerView?.linearLayoutAdapter(this)
+        rvPrayerTime?.linearLayoutAdapter(this)
     }
 
     init {

@@ -1,18 +1,33 @@
 package com.ekades.poststest.features.main
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.ekades.poststest.R
 import com.ekades.poststest.features.main.model.MainSection
+import com.ekades.poststest.features.main.state.PrayerScheduleTodayVS
+import com.ekades.poststest.features.networksV2.domain.interactor.GetPrayerScheduleTodayInteractor
+import com.ekades.poststest.features.prayerschedule.prayerscheduledetail.model.PrayerScheduleToday
 import com.ekades.poststest.lib.application.ApplicationProvider
+import com.ekades.poststest.lib.application.preferences.TemanDoaSession
 import com.ekades.poststest.lib.application.viewmodel.BaseViewModel
 import com.ekades.poststest.lib.application.viewmodel.mutableLiveDataOf
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.bind.DateTypeAdapter
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.util.*
 
-class MainViewModel : BaseViewModel() {
+class MainViewModel(
+    private val getPrayerScheduleTodayInteractor: GetPrayerScheduleTodayInteractor
+) : BaseViewModel() {
+
+    val viewState: LiveData<PrayerScheduleTodayVS> get() = mViewState
+    private val mViewState = MutableLiveData<PrayerScheduleTodayVS>()
+
     val mainItemList = mutableLiveDataOf<List<MainSection>>()
 
     private val gson: Gson = GsonBuilder()
@@ -51,5 +66,105 @@ class MainViewModel : BaseViewModel() {
         }
 
         return this
+    }
+
+    private fun getPrayerScheduleToday(cityId: String, year: String, month: String, day: String) {
+        viewModelScope.launch {
+            try {
+                showLoader(true)
+                getPrayerScheduleTodayInteractor.execute(
+                    GetPrayerScheduleTodayInteractor.Params(
+                        cityId, year, month, day
+                    )
+                ).collect {
+                    if (it.status && it.data != null) {
+                        val prayerScheduleToday = it.data.also { prayerScheduleToday ->
+                            prayerScheduleToday.requestDate = it.data.jadwal?.date
+                        }
+
+                        onSuccess(prayerScheduleToday)
+                        TemanDoaSession.prayerScheduleToday = prayerScheduleToday.toJson()
+                    } else {
+                        onFailed(it.message.orEmpty())
+                    }
+                }
+            } catch (e: Exception) {
+                onFailed(e.message.orEmpty())
+            }
+        }
+    }
+
+    private fun getSelectedTime(
+        result: (year: String, month: String, day: String) -> Unit
+    ) = viewModelScope.launch {
+        try {
+            val dt = Date()
+            val c = Calendar.getInstance()
+            c.time = dt
+            result.invoke(
+                c.get(Calendar.YEAR).toString(),
+                (c.get(Calendar.MONTH) + 1).toString(),
+                c.get(Calendar.DATE).toString()
+            )
+        } catch (e: Exception) {
+        }
+    }
+
+    private fun onSuccess(prayerScheduleToday: PrayerScheduleToday) {
+        mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(prayerScheduleToday)
+        showLoader(false)
+    }
+
+    private fun onFailed(errorMessage: String) {
+        mViewState.value = PrayerScheduleTodayVS.Error(errorMessage)
+        showLoader(false)
+    }
+
+    private fun showLoader(isShow: Boolean) {
+        mViewState.value = PrayerScheduleTodayVS.ShowLoader(isShow)
+    }
+
+    fun checkPrayerTime() {
+        getPrayerScheduleTodayFromSession()?.apply {
+            getSelectedTime { year, month, day ->
+                if (requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}") {
+                    mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                } else {
+                    getPrayerScheduleToday(cityId = id, year = year, month = month, day = day)
+                }
+            }
+        }
+    }
+
+    private fun String.adjustZero(): String {
+        return if ((this.toIntOrNull() ?: 0) < 10) {
+            "0$this"
+        } else {
+            this
+        }
+    }
+
+    fun onChangeCity(cityId: String, cityName: String) {
+        getPrayerScheduleTodayFromSession()?.apply {
+            id = cityId
+            lokasi = cityName
+            daerah = null
+            jadwal = null
+            requestDate = null
+
+            getSelectedTime { year, month, day ->
+                getPrayerScheduleToday(cityId = id, year = year, month = month, day = day)
+            }
+        }
+    }
+
+    private fun getPrayerScheduleTodayFromSession(): PrayerScheduleToday? {
+        return TemanDoaSession.prayerScheduleToday.takeIf { it.isNotEmpty() }?.let {
+            try {
+                return Gson().fromJson(it, PrayerScheduleToday::class.java)
+            } catch (e: Exception) {
+                null
+            }
+        }
     }
 }

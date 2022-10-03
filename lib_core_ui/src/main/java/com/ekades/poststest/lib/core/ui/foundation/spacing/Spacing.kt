@@ -15,5 +15,6 @@ enum class Spacing(val value: Int) {
     x36(R.dimen.spacing_x36.asDimen()),
     x42(R.dimen.spacing_x42.asDimen()),
     x48(R.dimen.spacing_x48.asDimen()),
-    x64(R.dimen.spacing_x64.asDimen())
+    x64(R.dimen.spacing_x64.asDimen()),
+    x76(R.dimen.spacing_x76.asDimen())
 }

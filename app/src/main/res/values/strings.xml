@@ -21,6 +21,9 @@
     <string name="title_post_detail">Post Detail</string>
     <string name="title_user_detail">User Detail</string>
     <string name="title_photo_detail">Photo Detail</string>
-
+    <string name="msg_input_prayer_schedule">Yuk, lihat jadwal Sholat di sini</string>
+    <string name="action_change_location">Ubah</string>
+    <string name="action_see_all">Lihat Semua</string>
+    <string name="show_latin_text">Tampilkan tulisan latin</string>
 
 </resources>

@@ -23,7 +23,6 @@ import com.ekades.poststest.models.Post
 import com.ekades.poststest.models.User
 import com.ekades.poststest.ui.user.UserDetailActivity
 import com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_post_detail.*
 import kotlinx.android.synthetic.main.activity_post_detail.toolbar
 import kotlinx.coroutines.Dispatchers

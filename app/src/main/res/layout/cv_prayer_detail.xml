@@ -90,14 +90,37 @@
                     app:layout_constraintTop_toBottomOf="@id/arabicHeaderMeaningTextView" />
 
                 <TextView
+                    style="@style/Body2BoldItalic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:text="@string/show_latin_text"
+                    android:textColor="@color/dustyGray"
+                    app:layout_constraintEnd_toStartOf="@id/cbShowLatin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cbShowLatin"
+                    app:layout_constraintBottom_toBottomOf="@id/cbShowLatin"/>
+
+                <com.ekades.poststest.lib.ui.component.selection.CheckBoxCV
+                    android:id="@+id/cbShowLatin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:layout_marginHorizontal="@dimen/spacing_x4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/arabicTextView" />
+
+                <TextView
                     android:id="@+id/latinTextView"
                     style="@style/Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/spacing_x16"
-                    android:layout_marginTop="@dimen/spacing_x24"
+                    android:layout_marginTop="@dimen/spacing_x8"
+                    android:paddingBottom="@dimen/spacing_x24"
                     android:textColor="@color/mineShaft"
-                    app:layout_constraintTop_toBottomOf="@+id/arabicTextView" />
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/cbShowLatin" />
 
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/meanView"
@@ -110,7 +133,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/spacing_x16"
-                    android:layout_marginTop="@dimen/spacing_x24"
                     android:background="@color/mineShaft"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -145,8 +167,8 @@
                         android:layout_marginVertical="@dimen/spacing_x8"
                         android:gravity="center"
                         android:textColor="@color/mineShaft"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -196,8 +218,8 @@
                         android:layout_marginVertical="@dimen/spacing_x8"
                         android:gravity="center"
                         android:textColor="@color/mineShaft"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

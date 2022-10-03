@@ -40,14 +40,6 @@
                     android:paddingBottom="@dimen/spacing_x20">
 
                     <TextView
-                        android:id="@+id/addCity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jadwal Sholat"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <TextView
                         android:id="@+id/titleCollapsingToolbarTextView"
                         style="@style/Heading2"
                         android:layout_width="0dp"
@@ -62,12 +54,122 @@
                         style="@style/Body1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/tagline"
                         android:layout_marginTop="@dimen/spacing_x12"
+                        android:text="@string/tagline"
                         android:textColor="@color/white"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/titleCollapsingToolbarTextView" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clPrayerTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_x16"
+                        app:layout_constraintTop_toBottomOf="@id/taglineToolbarTextView">
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/groupLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:constraint_referenced_ids="icLocation, tvLocation, tvChangeCity,dividerCV, tvDetailPrayerTime" />
+
+                        <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                            android:id="@+id/icLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            app:layout_constraintBottom_toTopOf="@id/dividerCV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvLocation"
+                            style="@style/Title5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/spacing_x16"
+                            android:textColor="@color/tundora"
+                            app:layout_constraintBottom_toBottomOf="@id/icLocation"
+                            app:layout_constraintEnd_toStartOf="@id/tvChangeCity"
+                            app:layout_constraintStart_toEndOf="@id/icLocation"
+                            app:layout_constraintTop_toTopOf="@id/icLocation" />
+
+                        <TextView
+                            android:id="@+id/tvChangeCity"
+                            style="@style/Label1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/spacing_x16"
+                            android:text="@string/action_change_location"
+                            android:textColor="@color/brand"
+                            app:layout_constraintBottom_toBottomOf="@id/tvLocation"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvLocation" />
+
+                        <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                            android:id="@+id/dividerCV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_x12"
+                            app:layout_constraintTop_toBottomOf="@id/icLocation" />
+
+                        <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                            android:id="@+id/icClock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/dividerCV" />
+
+                        <TextView
+                            android:id="@+id/tvPrayerTime"
+                            style="@style/Title5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_x16"
+                            android:text="@string/msg_input_prayer_schedule"
+                            android:textColor="@color/tundora"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/icClock"
+                            app:layout_constraintTop_toBottomOf="@id/dividerCV" />
+
+                        <TextView
+                            android:id="@+id/tvDetailPrayerTime"
+                            style="@style/Label1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/spacing_x16"
+                            android:text="@string/action_see_all"
+                            android:textColor="@color/brand"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPrayerTime"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvPrayerTime" />
+
+                        <com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
+                            android:id="@+id/loaderPrayerTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/spacing_x16"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/icClock"
+                            app:layout_constraintTop_toBottomOf="@id/dividerCV" />
+
+                        <com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
+                            android:id="@+id/loaderDetailPrayerTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/spacing_x16"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPrayerTime"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvPrayerTime" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -90,7 +192,7 @@
                 android:padding="@dimen/spacing_x16">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mainRecyclerView"
+                    android:id="@+id/rvPrayerTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent" />

@@ -8,5 +8,6 @@ dependencies {
     implementation "$lib.lifecycleExtensions"
     implementation "$lib.rxAndroid"
     implementation "$lib.coroutines"
+    implementation "$lib.coreKtx"
     api "$lib.koinViewModel"
 }
