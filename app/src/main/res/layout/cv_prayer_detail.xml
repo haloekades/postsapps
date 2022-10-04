@@ -89,26 +89,38 @@
                     android:textColor="@color/mineShaft"
                     app:layout_constraintTop_toBottomOf="@id/arabicHeaderMeaningTextView" />
 
+                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
+                    android:id="@+id/dividerCb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_x16"
+                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:background="@color/mineShaft"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/arabicTextView" />
+
                 <TextView
                     style="@style/Body2BoldItalic"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/spacing_x16"
+                    android:layout_marginRight="@dimen/spacing_x16"
+                    android:layout_marginEnd="@dimen/text_dimen_16"
                     android:text="@string/show_latin_text"
                     android:textColor="@color/dustyGray"
-                    app:layout_constraintEnd_toStartOf="@id/cbShowLatin"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cbShowLatin"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/cbShowLatin"
                     app:layout_constraintBottom_toBottomOf="@id/cbShowLatin"/>
 
-                <com.ekades.poststest.lib.ui.component.selection.CheckBoxCV
+                <com.ekades.temandoa.lib.ui.component.selection.CheckBoxCV
                     android:id="@+id/cbShowLatin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_x16"
-                    android:layout_marginHorizontal="@dimen/spacing_x4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/arabicTextView" />
+                    android:layout_marginTop="@dimen/spacing_x4"
+                    android:layout_marginHorizontal="@dimen/spacing_x12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dividerCb" />
 
                 <TextView
                     android:id="@+id/latinTextView"
@@ -128,7 +140,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerMean,bgMeanView, meanTextView" />
 
-                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerMean"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -178,7 +190,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerBenefits,bgBenefitsView, benefitsTextView" />
 
-                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerBenefits"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -229,7 +241,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerSource, sourceTextView" />
 
-                <com.ekades.poststest.lib.ui.component.misc.DividerCV
+                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerSource"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

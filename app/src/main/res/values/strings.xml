@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-<!--    <string name="app_name">Posts Test</string>-->
     <string name="app_name">Teman Doa</string>
     <string name="tagline">Aplikasi Kumpulan Doa &amp; Dzikir Islam.\nSiap menemani anda dalam berdoa &amp; berdizkir</string>
     <string name="read_count">Dibaca %sx</string>
     <string name="title_mean">Artinya :</string>
     <string name="title_benefits">Faedah :</string>
     <string name="title_tafsir">Tafsir :</string>
-
-
-    <string name="author">Author :</string>
-    <string name="comments">Comments :</string>
-    <string name="username_with_value"><![CDATA[<b>Username</b><br/>%s]]></string>
-    <string name="email_with_value"><![CDATA[<b>Email<b><br/>%s]]></string>
-    <string name="address_with_value"><![CDATA[<b>Address</b><br/>%s, %s,<br/> %s,<br/>%s]]></string>
-    <string name="company_with_value"><![CDATA[<b>Company</b><br/>%s,<br/>%s,<br/>%s]]></string>
-    <string name="album_photos">Album Photos</string>
-    <string name="title_app_name">Posts Test</string>
-    <string name="title_post_detail">Post Detail</string>
-    <string name="title_user_detail">User Detail</string>
-    <string name="title_photo_detail">Photo Detail</string>
     <string name="msg_input_prayer_schedule">Yuk, lihat jadwal Sholat di sini</string>
     <string name="action_change_location">Ubah</string>
     <string name="action_see_all">Lihat Semua</string>

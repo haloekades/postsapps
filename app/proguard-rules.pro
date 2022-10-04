@@ -102,16 +102,16 @@ public static final android.os.Parcelable$Creator *;
 # Application classes that will be serialized/deserialized over Gson
 -keep class com.google.gson.examples.android.model.** { *; }
 
--keep class com.ekades.poststest.models.** { *; }
--keep class com.ekades.poststest.entities.** { *; }
--keep class com.ekades.poststest.network.responses.** { *; }
--keep class com.ekades.poststest.networks.responses.** { *; }
+-keep class com.ekades.temandoa.models.** { *; }
+-keep class com.ekades.temandoa.entities.** { *; }
+-keep class com.ekades.temandoa.network.responses.** { *; }
+-keep class com.ekades.temandoa.networks.responses.** { *; }
 
 -keep class com.ekades.template.entities.** { *; }
 -keep class com.ekades.template.network.entities.** { *; }
 -keep class com.ekades.template.network.responses.** { *; }
 
--keep class com.ekades.poststest.lib.core.network.responses.entity.** { *; }
+-keep class com.ekades.temandoa.lib.core.network.responses.entity.** { *; }
 
 ##---------------End: proguard configuration for Gson  ----------
 

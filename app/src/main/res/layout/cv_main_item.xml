@@ -7,7 +7,7 @@
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
     tools:ignore="MissingDefaultResource">
 
-    <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+    <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
         android:id="@+id/iconCV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity">
 
-    <com.ekades.poststest.lib.ui.component.toolbar.ToolbarCV
+    <com.ekades.temandoa.lib.ui.component.toolbar.ToolbarCV
         android:id="@+id/toolbarCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,13 +41,15 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/clCity"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_x16"
                         android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                        <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
                             android:id="@+id/icPlace"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -102,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="@dimen/spacing_x16">
 
-                <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
                     android:id="@+id/beforeIconCV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,7 +113,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.ekades.poststest.lib.ui.component.icon.BasicIconCV
+                <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
                     android:id="@+id/afterIconCV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -131,7 +133,7 @@
                     app:layout_constraintRight_toLeftOf="@id/afterIconCV"
                     app:layout_constraintTop_toTopOf="@id/afterIconCV" />
 
-                <com.ekades.poststest.lib.ui.component.loading.RectangleSkeletonCV
+                <com.ekades.temandoa.lib.ui.component.loading.RectangleSkeletonCV
                     android:id="@+id/shownMonthskeletonCV"
                     android:layout_width="100dp"
                     android:layout_height="@dimen/spacing_x32"

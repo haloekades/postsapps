@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ekades.poststest">
+    package="com.ekades.temandoa">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,7 +13,7 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="com.ekades.poststest.apps.BaseApp"
+        android:name="com.ekades.temandoa.apps.BaseApp"
         android:allowBackup="false"
         android:exported="false"
         android:hardwareAccelerated="true"
@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".features.splash.SplashActivity"
+            android:name="com.ekades.temandoa.features.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,37 +31,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".features.main.MainActivity"
+            android:name="com.ekades.temandoa.features.main.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".features.prayerdetail.PrayerDetailActivity"
+            android:name="com.ekades.temandoa.features.prayerdetail.PrayerDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".features.prayerlist.PrayerListActivity"
+            android:name="com.ekades.temandoa.features.prayerlist.PrayerListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.poststest.features.prayerschedule.searchcity.SearchCityActivity"
+            android:name="com.ekades.temandoa.features.prayerschedule.searchcity.SearchCityActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.ekades.poststest.ui.main.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".features.post.presentation.activities.MainV2Activity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".features.users.presentation.activities.UserListActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.ekades.poststest.ui.post.PostDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.ekades.poststest.ui.user.UserDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.ekades.poststest.ui.photo.PhotoDetailActivity"
+            android:name="com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 

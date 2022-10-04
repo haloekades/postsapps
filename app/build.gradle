@@ -33,7 +33,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
-        applicationId "com.ekades.poststest"
+        applicationId "com.ekades.temandoa"
         minSdkVersion builds.minSdk
         targetSdkVersion builds.targetSdk
         versionCode builds.versionCode
@@ -52,7 +52,6 @@ android {
     }
     buildTypes {
         debug {
-            testCoverageEnabled true
             shrinkResources false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -103,6 +102,7 @@ dependencies {
     api project(':lib_core_network')
     api project(':lib_core_ui')
     api project(':lib_ui_component')
+    implementation "$lib.lifecycleViewModel"
     implementation "$lib.coroutines"
     api "$lib.koinAndroid"
     api "$lib.koinScope"

@@ -3,7 +3,7 @@ ext {
             minSdk          : 16,
             compileSdk      : 30,
             targetSdk       : 30,
-            versionCode     : 10000,
-            versionName     : '1.0.0'
+            versionCode     : 2022010001,
+            versionName     : '1.0.1'
     ]
 }

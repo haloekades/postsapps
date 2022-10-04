@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".features.prayerdetail.PrayerDetailActivity">
 
-    <com.ekades.poststest.lib.ui.component.toolbar.ToolbarCV
+    <com.ekades.temandoa.lib.ui.component.toolbar.ToolbarCV
         android:id="@+id/toolbarCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

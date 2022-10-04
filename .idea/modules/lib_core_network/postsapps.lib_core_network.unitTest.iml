@@ -73,6 +73,7 @@
     <content url="file://$MODULE_DIR$/../../../lib_core_network/build/generated/source/kapt/debugUnitTest" />
     <content url="file://$MODULE_DIR$/../../../lib_core_network/build/generated/source/kaptKotlin/debugUnitTest">
       <sourceFolder url="file://$MODULE_DIR$/../../../lib_core_network/build/generated/source/kaptKotlin/debugUnitTest" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../lib_core_network/build/generated/source/kaptKotlin/debugUnitTest" isTestSource="true" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../lib_core_network/src/sharedTest/java" />
     <content url="file://$MODULE_DIR$/../../../lib_core_network/src/test" />
