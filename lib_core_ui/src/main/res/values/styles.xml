@@ -317,15 +317,16 @@
         <item name="strokeColor">@color/tundora</item>
     </style>
 
-
     <style name="ArabicBold" parent="TextAppearance.AppCompat">
         <!--        <item name="fontFamily">@font/muhammadi_quranic</item>-->
         <!--        <item name="android:fontFamily">@font/muhammadi_quranic</item>-->
-        <item name="fontFamily">@font/amiri_bold</item>
-        <item name="android:fontFamily">@font/amiri_bold</item>
+<!--        <item name="fontFamily">@font/amiri_bold</item>-->
+<!--        <item name="android:fontFamily">@font/amiri_bold</item>-->
+        <item name="fontFamily">@font/uthmanic_hafs_ver12</item>
+        <item name="android:fontFamily">@font/uthmanic_hafs_ver12</item>
         <item name="android:textSize">@dimen/text_dimen_28</item>
-        <item name="lineHeight">@dimen/text_line_height_70</item>
-        <item name="fontWeight">@integer/text_weight_700</item>
+        <item name="lineHeight">@dimen/text_line_height_60</item>
+        <item name="fontWeight">@integer/text_weight_900</item>
     </style>
 
 </resources>

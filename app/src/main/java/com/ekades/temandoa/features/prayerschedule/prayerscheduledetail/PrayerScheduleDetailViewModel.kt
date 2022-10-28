@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ekades.temandoa.features.networksV2.domain.interactor.GetPrayerScheduleMonthlyInteractor
+import com.ekades.temandoa.networksV2.prayerschedule.domain.interactor.GetPrayerScheduleMonthlyInteractor
 import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.DateSelector
 import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.PrayerScheduleDetail
 import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.PrayerScheduleToday

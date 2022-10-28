@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.ekades.temandoa.R
 import com.ekades.temandoa.features.main.model.MainSection
 import com.ekades.temandoa.features.main.state.PrayerScheduleTodayVS
-import com.ekades.temandoa.features.networksV2.domain.interactor.GetPrayerScheduleTodayInteractor
+import com.ekades.temandoa.networksV2.prayerschedule.domain.interactor.GetPrayerScheduleTodayInteractor
 import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.PrayerScheduleToday
 import com.ekades.temandoa.lib.application.ApplicationProvider
 import com.ekades.temandoa.lib.application.preferences.TemanDoaSession

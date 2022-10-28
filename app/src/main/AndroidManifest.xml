@@ -45,6 +45,12 @@
         <activity
             android:name="com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.quranlist.QuranSurahListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.qurandetail.QuranSurahDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

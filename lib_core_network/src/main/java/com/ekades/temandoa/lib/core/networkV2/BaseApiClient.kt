@@ -8,16 +8,15 @@ import java.util.concurrent.TimeUnit
 
 open class BaseApiClient<T>(private val classT: Class<T>) {
 
-    companion object{
-//        const val BASE_URL = "https://jsonplaceholder.typicode.com"
-//        const val BASE_URL = "https://api.github.com/"
-        const val BASE_URL = "https://api.myquran.com/v1/"
+    companion object {
+        const val BASE_URL_PRAYER_SCHEDULE = "https://api.myquran.com/v1/"
+        const val BASE_URL_QURAN = "https://api.npoint.io/99c279bb173a6e28359c/"
         const val CONNECTION_TIMEOUT: Long = 180L
         const val READ_TIMEOUT: Long = 180L
         const val WRITE_TIMEOUT: Long = 180L
     }
 
-    open fun getApiClient(): T {
+    open fun getApiClient(baseUrl: String): T {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -29,8 +28,7 @@ open class BaseApiClient<T>(private val classT: Class<T>) {
             .build()
 
         val retrofitBuilder = Retrofit.Builder().apply {
-//            baseUrl(BuildConfig.URL_SERVER)
-            baseUrl(BASE_URL)
+            baseUrl(baseUrl)
             client(okHttpClient)
             addConverterFactory(GsonConverterFactory.create())
         }

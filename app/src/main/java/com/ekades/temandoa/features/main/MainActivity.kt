@@ -16,6 +16,7 @@ import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.Pr
 import com.ekades.temandoa.features.prayerschedule.searchcity.SearchCityActivity
 import com.ekades.temandoa.features.prayerschedule.searchcity.SearchCityActivity.Companion.EXTRA_CITY_ID
 import com.ekades.temandoa.features.prayerschedule.searchcity.SearchCityActivity.Companion.EXTRA_CITY_NAME
+import com.ekades.temandoa.features.quranlist.QuranSurahListActivity
 import com.ekades.temandoa.lib.application.ui.CoreActivity
 import com.ekades.temandoa.lib.core.ui.extension.*
 import com.ekades.temandoa.lib.core.ui.foundation.background.CornerBackgroundLarge
@@ -228,15 +229,16 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
     }
 
     private fun openPrayerList(section: MainSection) {
-        section.jsonFile?.apply {
-            startActivity(
-                PrayerListActivity.newIntent(
-                    this@MainActivity,
-                    section.name,
-                    section.jsonFile
-                )
-            )
-        }
+//        section.jsonFile?.apply {
+//            startActivity(
+//                PrayerListActivity.newIntent(
+//                    this@MainActivity,
+//                    section.name,
+//                    section.jsonFile
+//                )
+//            )
+//        }
+        startActivity(QuranSurahListActivity.newIntent(this))
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -2,7 +2,7 @@ package com.ekades.temandoa.features.prayerschedule.searchcity
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ekades.temandoa.features.networksV2.domain.interactor.GetAllCityInteractor
+import com.ekades.temandoa.networksV2.prayerschedule.domain.interactor.GetAllCityInteractor
 import com.ekades.temandoa.features.prayerschedule.searchcity.model.CityItem
 import com.ekades.temandoa.lib.application.preferences.TemanDoaSession
 import com.ekades.temandoa.lib.application.viewmodel.mutableLiveDataOf
