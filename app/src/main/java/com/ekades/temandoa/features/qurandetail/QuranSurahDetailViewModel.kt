@@ -10,6 +10,7 @@ import com.ekades.temandoa.lib.application.viewmodel.mutableLiveDataOf
 import com.ekades.temandoa.lib.core.networkV2.utils.io
 import com.ekades.temandoa.lib.core.networkV2.utils.ui
 import com.ekades.temandoa.networksV2.quran.domain.interactor.GetQuranSurahDetailInteractor
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -20,9 +21,17 @@ class QuranSurahDetailViewModel(
     private val mQuranSurahDetail = arrayListOf<SurahDetail>()
     val shownQuranSurahDetail = mutableLiveDataOf<List<SurahDetail>>()
     val showLoading = mutableLiveDataOf<Boolean>()
+    val mIsPlayingMurottal = mutableLiveDataOf<Boolean>()
+
+    val isPlayingMurottal: Boolean
+        get() = mIsPlayingMurottal.value == true
 
     var surah: Surah? = null
     var page = 1
+
+    fun onClickAudioAction() {
+        mIsPlayingMurottal.value = isPlayingMurottal.not()
+    }
 
     fun processIntent(intent: Intent?) {
         if (intent != null) {

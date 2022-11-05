@@ -3,15 +3,20 @@ package com.ekades.temandoa.features.prayerdetail
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.Observer
+import androidx.viewpager.widget.ViewPager
 import com.ekades.temandoa.R
 import com.ekades.temandoa.features.prayerdetail.model.PrayerItem
 import com.ekades.temandoa.lib.application.ui.CoreActivity
+import com.ekades.temandoa.lib.core.ui.foundation.background.CornerBackgroundLarge
 import com.ekades.temandoa.lib.core.ui.foundation.background.shadowSmallReverse
+import com.ekades.temandoa.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.temandoa.lib.core.ui.foundation.corner.CornerRadius
+import com.ekades.temandoa.lib.ui.asset.extension.dp
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_prayer_detail.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.jetbrains.anko.textColor
 import kotlin.math.abs
 
 class PrayerDetailActivity : CoreActivity<PrayerDetailViewModel>(PrayerDetailViewModel::class) {
@@ -71,11 +76,79 @@ class PrayerDetailActivity : CoreActivity<PrayerDetailViewModel>(PrayerDetailVie
     }
 
     private fun renderPrayerDetail(prayers: List<PrayerItem>) {
+        setupViewPager(prayers)
+        indicatorBgView.shadowSmallReverse(CornerRadius.SMALL)
+    }
+
+    private fun setupViewPager(prayers: List<PrayerItem>) {
         val modalAdapter = PrayerDetailAdapter(data = prayers)
         viewPager.adapter = modalAdapter
         vpIndicator.setupWithViewPager(viewPager)
         viewPager.currentItem = viewModel.currentPosition
-        indicatorBgView.shadowSmallReverse(CornerRadius.SMALL)
+        setupActionPrevious(viewModel.currentPosition > 0)
+        setupActionNext(viewModel.currentPosition < (prayers.size - 1))
+        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                setupActionPrevious(position > 0)
+                setupActionNext(position < (prayers.size - 1))
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+        })
+    }
+
+    private fun setupActionPrevious(isEnable: Boolean) {
+        val color = if (isEnable) {
+            ColorPalette.BRAND
+        } else {
+            ColorPalette.MERCURY
+        }
+
+        tvPrevious.textColor = color
+        bgActionPrevious.background = CornerBackgroundLarge().apply {
+            setColor(ColorPalette.WHITE)
+            setStroke(1.dp(), color)
+        }
+        bgActionPrevious.setOnClickListener {
+            if (isEnable) {
+                onClickPrevious()
+            }
+        }
+    }
+
+    private fun onClickPrevious() {
+        viewPager.currentItem = viewPager.currentItem - 1
+    }
+
+    private fun setupActionNext(isEnable: Boolean) {
+        val color = if (isEnable) {
+            ColorPalette.BRAND
+        } else {
+            ColorPalette.MERCURY
+        }
+
+        tvNext.textColor = color
+        bgActionNext.background = CornerBackgroundLarge().apply {
+            setColor(ColorPalette.WHITE)
+            setStroke(1.dp(), color)
+        }
+        bgActionNext.setOnClickListener {
+            if (isEnable) {
+                onClickNext()
+            }
+        }
+    }
+
+    private fun onClickNext() {
+        viewPager.currentItem = viewPager.currentItem + 1
     }
 
     companion object {

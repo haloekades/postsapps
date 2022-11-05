@@ -10,7 +10,7 @@ open class BaseApiClient<T>(private val classT: Class<T>) {
 
     companion object {
         const val BASE_URL_PRAYER_SCHEDULE = "https://api.myquran.com/v1/"
-        const val BASE_URL_QURAN = "https://api.npoint.io/99c279bb173a6e28359c/"
+        const val BASE_URL_QURAN = "https://equran.id/api/"
         const val CONNECTION_TIMEOUT: Long = 180L
         const val READ_TIMEOUT: Long = 180L
         const val WRITE_TIMEOUT: Long = 180L

@@ -1,6 +1,7 @@
 package com.ekades.temandoa.di
 
 import com.ekades.temandoa.features.main.MainViewModel
+import com.ekades.temandoa.features.murottal.MurottalListViewModel
 import com.ekades.temandoa.networksV2.prayerschedule.data.dataSource.PrayerScheduleDataStore
 import com.ekades.temandoa.networksV2.prayerschedule.data.repository.PrayerScheduleRepositoryImpl
 import com.ekades.temandoa.networksV2.prayerschedule.domain.interactor.GetAllCityInteractor
@@ -50,6 +51,10 @@ private val postModule = module {
 
     viewModel {
         QuranSurahDetailViewModel(get())
+    }
+
+    viewModel {
+        MurottalListViewModel(get())
     }
 
     //end Teman Doa

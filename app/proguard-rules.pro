@@ -246,6 +246,16 @@ public static final android.os.Parcelable$Creator *;
 -keep class com.moengage.addon.messaging.MoEMessageSyncReceiver
 -keep class com.moengage.addon.messaging.MoEMessageSyncIntentService
 
+-keep class com.ekades.temandoa.networksV2.prayerschedule.data.dataSource.response.** { *; }
+-keep class com.ekades.temandoa.networksV2.quran.data.dataSource.response.** { *; }
+
+-keep class com.ekades.temandoa.features.main.model.** { *; }
+-keep class com.ekades.temandoa.features.prayerdetail.model.** { *; }
+-keep class com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.** { *; }
+-keep class com.ekades.temandoa.features.prayerschedule.searchcity.model.** { *; }
+-keep class com.ekades.temandoa.features.qurandetail.model.** { *; }
+-keep class com.ekades.temandoa.features.quranlist.model.** { *; }
+
 -dontwarn com.moengage.location.GeoManager
 -dontwarn com.moengage.core.GeoTask
 -dontwarn com.moengage.receiver.*

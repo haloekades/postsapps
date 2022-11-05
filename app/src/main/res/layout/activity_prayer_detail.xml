@@ -85,13 +85,67 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/vpIndicator"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgActionPrevious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_x12"
+            android:layout_marginVertical="@dimen/spacing_x8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvPrevious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Label1"
+                android:text="@string/action_previous"
+                android:textColor="@color/brand"
+                android:layout_marginVertical="@dimen/spacing_x12"
+                android:layout_marginHorizontal="@dimen/spacing_x8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgActionNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_x12"
+            android:layout_marginVertical="@dimen/spacing_x8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Label1"
+                android:text="@string/action_next"
+                android:textColor="@color/brand"
+                android:layout_marginVertical="@dimen/spacing_x12"
+                android:layout_marginHorizontal="@dimen/spacing_x8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/vpIndicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_x8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/bgActionNext"
+            app:layout_constraintStart_toEndOf="@id/bgActionPrevious"
             app:tabBackground="@drawable/vp_indicator_selector"
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp" />

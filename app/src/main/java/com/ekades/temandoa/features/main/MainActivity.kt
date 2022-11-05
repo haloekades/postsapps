@@ -7,8 +7,11 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.ekades.temandoa.R
 import com.ekades.temandoa.features.main.model.MainSection
+import com.ekades.temandoa.features.main.model.MainSection.Companion.ID_MUROTTAL
+import com.ekades.temandoa.features.main.model.MainSection.Companion.ID_QURAN
 import com.ekades.temandoa.features.main.state.PrayerScheduleTodayVS
 import com.ekades.temandoa.features.main.view.MainItemCV
+import com.ekades.temandoa.features.murottal.MurottalListActivity
 import com.ekades.temandoa.features.prayerdetail.PrayerDetailActivity
 import com.ekades.temandoa.features.prayerlist.PrayerListActivity
 import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity
@@ -112,11 +115,13 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
         icLocation.bind {
             imageSize = IconSize.MEDIUM
             imageDrawable = R.drawable.ic_place
+            imageTint = ColorPalette.TUNDORA
         }
 
         icClock.bind {
             imageSize = IconSize.MEDIUM
             imageDrawable = R.drawable.ic_clock
+            imageTint = ColorPalette.TUNDORA
         }
 
         clPrayerTime.background = CornerBackgroundLarge().apply {
@@ -204,7 +209,11 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
             }) {
                 section = item
                 onItemClickListener = { section ->
-                    if (section.isShowDetail) {
+                    if (section.id == ID_QURAN) {
+                        openQuranPage()
+                    } else if (section.id == ID_MUROTTAL) {
+                        openMurottalPage()
+                    } else if (section.isShowDetail) {
                         openPrayerDetail(section)
                     } else {
                         openPrayerList(section)
@@ -229,16 +238,23 @@ class MainActivity : CoreActivity<MainViewModel>(MainViewModel::class) {
     }
 
     private fun openPrayerList(section: MainSection) {
-//        section.jsonFile?.apply {
-//            startActivity(
-//                PrayerListActivity.newIntent(
-//                    this@MainActivity,
-//                    section.name,
-//                    section.jsonFile
-//                )
-//            )
-//        }
+        section.jsonFile?.apply {
+            startActivity(
+                PrayerListActivity.newIntent(
+                    this@MainActivity,
+                    section.name,
+                    section.jsonFile
+                )
+            )
+        }
+    }
+
+    private fun openQuranPage() {
         startActivity(QuranSurahListActivity.newIntent(this))
+    }
+
+    private fun openMurottalPage() {
+        startActivity(MurottalListActivity.newIntent(this))
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

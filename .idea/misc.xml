@@ -4,11 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_clock.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_headphone.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_human_praying_night.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_place.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_player_play.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_player_stop.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_quran.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_sunrise.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_sunset.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/ic_teman_doa.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout-v21/cv_audio_player.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout-v21/cv_murottal_player.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_murottal_list.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_post_detail.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_prayer_detail.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_prayer_list.xml" value="0.19610507246376813" />
@@ -18,8 +28,11 @@
         <entry key="app/src/main/res/layout/activity_search_city.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.14010416666666667" />
         <entry key="app/src/main/res/layout/activity_user_detail.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/cv_audio_player.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/cv_date_selector.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/cv_main_item.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/cv_murottal_list_item.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/cv_murottal_player.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/cv_prayer_detail.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/cv_prayer_list_item.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/cv_quran_surah_detail_item.xml" value="0.19610507246376813" />

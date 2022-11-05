@@ -12,6 +12,7 @@ import com.ekades.temandoa.features.prayerschedule.prayerscheduledetail.model.Pr
 import com.ekades.temandoa.lib.application.ApplicationProvider
 import com.ekades.temandoa.lib.application.preferences.TemanDoaSession
 import com.ekades.temandoa.lib.application.viewmodel.mutableLiveDataOf
+import com.ekades.temandoa.lib.core.NetworkUtils
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -56,12 +57,14 @@ class MainViewModel(
     private fun List<MainSection>.addIcon(): List<MainSection> {
         this.forEach { section ->
             when (section.id) {
-                0 -> section.icon = R.drawable.ic_sunrise
-                1 -> section.icon = R.drawable.ic_sunset
-                2 -> section.icon = R.drawable.ic_hand_pray
-                3 -> section.icon = R.drawable.ic_human_praying_morning
-                4 -> section.icon = R.drawable.ic_human_praying_night
-                5 -> section.icon = R.drawable.ic_quran
+                0 -> section.icon = R.drawable.ic_quran
+                1 -> section.icon = R.drawable.ic_headphone
+                2 -> section.icon = R.drawable.ic_sunrise
+                3 -> section.icon = R.drawable.ic_sunset
+                4 -> section.icon = R.drawable.ic_hand_pray
+                5 -> section.icon = R.drawable.ic_human_praying_morning
+                6 -> section.icon = R.drawable.ic_human_praying_night
+//                6 -> section.icon = R.drawable.ic_quran
             }
         }
 
@@ -126,12 +129,16 @@ class MainViewModel(
 
     fun checkPrayerTime() {
         getPrayerScheduleTodayFromSession()?.apply {
-            getSelectedTime { year, month, day ->
-                if (requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}") {
-                    mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
-                } else {
-                    getPrayerScheduleToday(cityId = id, year = year, month = month, day = day)
+            if (NetworkUtils.isConnected()) {
+                getSelectedTime { year, month, day ->
+                    if (requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}") {
+                        mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                    } else {
+                        getPrayerScheduleToday(cityId = id, year = year, month = month, day = day)
+                    }
                 }
+            } else {
+                mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
             }
         }
     }

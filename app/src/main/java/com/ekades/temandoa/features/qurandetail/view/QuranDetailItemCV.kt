@@ -10,8 +10,9 @@ import com.ekades.temandoa.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.temandoa.lib.core.ui.foundation.container.ConstraintContainer
 import com.ekades.temandoa.lib.core.ui.foundation.spacing.Spacing
 import com.ekades.temandoa.lib.ui.asset.extension.dp
-import com.ekades.temandoa.lib.ui.component.misc.DividerCV
 import kotlinx.android.synthetic.main.cv_quran_surah_detail_item.view.*
+import kotlinx.android.synthetic.main.cv_quran_surah_detail_item.view.bgNumber
+import kotlinx.android.synthetic.main.cv_quran_surah_detail_item.view.tvNumber
 import org.jetbrains.anko.backgroundColor
 
 class QuranDetailItemCV @JvmOverloads constructor(
@@ -28,9 +29,6 @@ class QuranDetailItemCV @JvmOverloads constructor(
     init {
         View.inflate(context, R.layout.cv_quran_surah_detail_item, this)
         setContainerParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        dividerCV.bind {
-            dividerStyle = DividerCV.DividerStyle.STRAIGHT
-        }
     }
 
     override fun initState(): State = State()
@@ -38,12 +36,15 @@ class QuranDetailItemCV @JvmOverloads constructor(
     override fun render(state: State) {
         with(state) {
             surahDetail?.apply {
-                tvNumber.text = nomor
+                bgNumber.background = CornerBackgroundFullRounded(Spacing.x32.value).apply {
+                    setColor(ColorPalette.WHITE)
+                    setStroke(1.dp(), ColorPalette.BRAND)
+                }
+                tvNumber.text = nomor.toString()
                 tvArabic.text = ar
-                tvAyahMean.text = id
+                tvAyahMean.text = idn
             }
             backgroundColor = bgColor
-
         }
     }
 }

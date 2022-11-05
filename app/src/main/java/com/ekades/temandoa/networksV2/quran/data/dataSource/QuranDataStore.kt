@@ -15,7 +15,7 @@ class QuranDataStore {
     }
 
     fun getQuranSurahDetail(number: String): Flow<List<SurahDetail>> = flow {
-        QuranApiClient.getApiClient(BASE_URL_QURAN).getQuranSurahDetail(number).apply {
+        QuranApiClient.getApiClient(BASE_URL_QURAN).getQuranSurahDetail(number).ayat.apply {
             emit(this)
         }
     }

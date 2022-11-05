@@ -1,8 +1,8 @@
 package com.ekades.temandoa.features.qurandetail.model
 
 data class SurahDetail(
+    val nomor: Int,
     val ar: String,
-    val id: String,
-    val tr: String,
-    val nomor: String
+    val idn: String,
+    val tr: String
 )

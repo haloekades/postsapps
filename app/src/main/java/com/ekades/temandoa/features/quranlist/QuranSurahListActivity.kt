@@ -21,12 +21,16 @@ import com.ekades.temandoa.lib.core.ui.foundation.container.LinearContainer
 import com.ekades.temandoa.lib.core.ui.foundation.spacing.Spacing
 import com.ekades.temandoa.lib.ui.asset.extension.dp
 import com.ekades.temandoa.lib.ui.component.loading.RectangleSkeletonCV
+import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_quran_surah_list.*
+import kotlinx.android.synthetic.main.activity_quran_surah_list.appBar
 import kotlinx.android.synthetic.main.activity_quran_surah_list.mainContentView
 import kotlinx.android.synthetic.main.activity_quran_surah_list.nestedScrollView
+import kotlinx.android.synthetic.main.activity_quran_surah_list.titleCollapsingToolbarTextView
 import kotlinx.android.synthetic.main.activity_quran_surah_list.toolbarCV
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.math.abs
 
 class QuranSurahListActivity :
     CoreActivity<QuranSurahListViewModel>(QuranSurahListViewModel::class) {
@@ -40,20 +44,37 @@ class QuranSurahListActivity :
     }
 
     override fun render() = launch(Dispatchers.Main) {
-        showToolbar()
+        setupAppBarListener()
         renderBgContentView()
         registerObserver()
         setupRecyclerView()
         viewModel.getAllQuranSurah()
     }
 
-    private fun showToolbar() {
+    private fun showToolbar(isVisible: Boolean = true) {
         toolbarCV.bind {
             onClickBackListener = {
                 onBackPressed()
             }
-            toolbarTitle = "Al-Quran"
+            toolbarTitle = if (isVisible) {
+                getString(R.string.al_quran)
+            } else {
+                null
+            }
         }
+    }
+
+    private fun setupAppBarListener() {
+        titleCollapsingToolbarTextView.text = getString(R.string.al_quran)
+        appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if (abs(verticalOffset) >= appBarLayout.totalScrollRange) {
+                titleCollapsingToolbarTextView.alpha = 0F
+                showToolbar()
+            } else {
+                titleCollapsingToolbarTextView.alpha = 1F
+                showToolbar(false)
+            }
+        })
     }
 
     private fun renderBgContentView() {
@@ -99,7 +120,7 @@ class QuranSurahListActivity :
                 onItemClickListener = { surah ->
                     openSurahDetail(surah)
                 }
-            }.setIdentifier(item.nama)
+            }.setIdentifier(item.namaLatin)
         }.toMutableList()
 
         adapter?.diffCalculateAdapter(components)
@@ -121,10 +142,10 @@ class QuranSurahListActivity :
             component.add(LinearContainer.newComponent({
                 RectangleSkeletonCV(this)
             }) {
-                height = 70.dp()
+                height = 130.dp()
                 componentMargin = Rectangle(
                     vertical = Spacing.x4,
-                    horizontal = Spacing.x12
+                    horizontal = Spacing.x8
                 )
             }.setIdentifier("loading-$i"))
         }

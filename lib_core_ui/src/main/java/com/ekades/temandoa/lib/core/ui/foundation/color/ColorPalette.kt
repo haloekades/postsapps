@@ -143,4 +143,7 @@ object ColorPalette {
     val PINK_LACE = R.color.pinkLace.asColor()
     @JvmField @ColorInt
     val AMOUR = R.color.amour.asColor()
+
+    @JvmField @ColorInt
+    val BRAND_80 = R.color.brand80.asColor()
 }

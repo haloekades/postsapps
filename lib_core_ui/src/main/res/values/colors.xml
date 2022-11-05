@@ -93,4 +93,7 @@
     <color name="layer6_background">#1ADADADA</color>
     <color name="layer7_background">#1CDADADA</color>
     <color name="layer8_background">#1FDADADA</color>
+
+    <color name="brand80">#9952bfb6</color>
+
 </resources>

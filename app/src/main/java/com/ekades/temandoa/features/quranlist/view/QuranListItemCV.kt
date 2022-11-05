@@ -3,14 +3,13 @@ package com.ekades.temandoa.features.quranlist.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import androidx.core.view.setPadding
 import com.ekades.temandoa.R
 import com.ekades.temandoa.features.quranlist.model.Surah
-import com.ekades.temandoa.lib.core.ui.extension.setViewMargin
 import com.ekades.temandoa.lib.core.ui.foundation.background.CornerBackgroundFullRounded
 import com.ekades.temandoa.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.temandoa.lib.core.ui.foundation.container.ConstraintContainer
 import com.ekades.temandoa.lib.core.ui.foundation.spacing.Spacing
+import com.ekades.temandoa.lib.ui.asset.extension.dp
 import com.ekades.temandoa.lib.ui.component.misc.DividerCV
 import kotlinx.android.synthetic.main.cv_quran_surah_list_item.view.*
 
@@ -38,13 +37,14 @@ class QuranListItemCV @JvmOverloads constructor(
     override fun render(state: State) {
         with(state) {
             surah?.apply {
-                bgNumber.background = CornerBackgroundFullRounded(Spacing.x36.value).apply {
-                    setColor(ColorPalette.NARVIK)
+                bgNumber.background = CornerBackgroundFullRounded(Spacing.x32.value).apply {
+                    setColor(ColorPalette.WHITE)
+                    setStroke(1.dp(), ColorPalette.BRAND)
                 }
                 tvNumber.text = nomor
-                tvSurahName.text = nama
+                tvSurahName.text = namaLatin
                 tvSurahMean.text = arti
-                tvSurahType.text = "$showType - $ayat ayat"
+                tvTotalAyah.text = "$showType - $jumlahAyat ayat"
                 setOnClickListener {
                     onItemClickListener?.invoke(this)
                 }

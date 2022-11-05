@@ -51,6 +51,9 @@
         <activity
             android:name=".features.qurandetail.QuranSurahDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.murottal.MurottalListActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

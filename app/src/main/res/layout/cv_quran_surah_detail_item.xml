@@ -6,17 +6,28 @@
     android:layout_height="wrap_content"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-    <TextView
-        android:id="@+id/tvNumber"
-        style="@style/Title5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_x20"
-        android:layout_marginLeft="@dimen/spacing_x20"
-        android:layout_marginTop="@dimen/spacing_x20"
-        android:textColor="@color/brand"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bgNumber"
+        android:layout_width="@dimen/spacing_x32"
+        android:layout_height="@dimen/spacing_x32"
+        android:layout_marginTop="@dimen/spacing_x16"
+        android:layout_marginStart="@dimen/spacing_x16"
+        android:layout_marginLeft="@dimen/spacing_x16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvNumber"
+            style="@style/Body3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brand"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvArabic"
@@ -29,30 +40,20 @@
         android:layout_marginRight="@dimen/spacing_x16"
         android:textColor="@color/darkKnight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvNumber"
-        app:layout_constraintTop_toBottomOf="@id/tvNumber" />
+        app:layout_constraintStart_toEndOf="@id/bgNumber"
+        app:layout_constraintTop_toBottomOf="@id/bgNumber" />
 
     <TextView
         android:id="@+id/tvAyahMean"
-        style="@style/Body4"
+        style="@style/Body2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_x20"
         android:layout_marginTop="@dimen/spacing_x12"
+        android:paddingBottom="@dimen/spacing_x20"
         android:textColor="@color/emperor"
         app:layout_constraintEnd_toEndOf="@id/tvArabic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvArabic" />
-
-    <com.ekades.temandoa.lib.ui.component.misc.DividerCV
-        android:id="@+id/dividerCV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_x20"
-        android:background="@color/mineShaft"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAyahMean" />
 
 </merge>

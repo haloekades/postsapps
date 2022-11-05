@@ -8,18 +8,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bgNumber"
-        android:layout_width="@dimen/spacing_x36"
-        android:layout_height="@dimen/spacing_x36"
+        android:layout_width="@dimen/spacing_x32"
+        android:layout_height="@dimen/spacing_x32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/tvNumber"
-            style="@style/Title5"
+            style="@style/Body3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkKnight"
+            android:textColor="@color/brand"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +28,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
-        android:id="@+id/icChevron"
+        android:id="@+id/icPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/spacing_x16"
-        android:layout_marginRight="@dimen/spacing_x16"
+        android:layout_marginEnd="@dimen/spacing_x8"
+        android:layout_marginRight="@dimen/spacing_x8"
         app:icon="@drawable/ic_basic_chevron_right"
         app:iconColorTint="@color/mineShaft"
         app:iconHolderSize="small"
@@ -49,7 +49,7 @@
         android:layout_marginStart="@dimen/spacing_x12"
         android:layout_marginLeft="@dimen/spacing_x12"
         android:layout_marginTop="@dimen/spacing_x20"
-        app:layout_constraintEnd_toStartOf="@id/icChevron"
+        app:layout_constraintEnd_toStartOf="@id/icPlayer"
         app:layout_constraintStart_toEndOf="@id/bgNumber"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvSurahName" />
 
     <TextView
-        android:id="@+id/tvSurahType"
+        android:id="@+id/tvTotalAyah"
         style="@style/Body4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:background="@color/mineShaft"
         android:layout_marginTop="@dimen/spacing_x20"
-        app:layout_constraintTop_toBottomOf="@id/tvSurahType"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalAyah"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
