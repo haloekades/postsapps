@@ -21,6 +21,9 @@ import com.ekades.temandoa.lib.core.ui.foundation.spacing.Spacing
 import com.ekades.temandoa.lib.ui.asset.extension.dp
 import com.ekades.temandoa.lib.ui.component.loading.RectangleSkeletonCV
 import kotlinx.android.synthetic.main.activity_search_city.*
+import kotlinx.android.synthetic.main.activity_search_city.nestedScrollView
+import kotlinx.android.synthetic.main.activity_search_city.toolbarCV
+import kotlinx.android.synthetic.main.activity_search_city.viewTopRound
 import kotlinx.coroutines.*
 
 
@@ -41,7 +44,7 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
         showToolbar()
         setupInputTextListener()
         registerObeserver()
-        renderBgContentView()
+        renderViewTopRound()
         setupRecyclerView()
         viewModel.getAllCity()
     }
@@ -64,8 +67,8 @@ class SearchCityActivity : CoreActivity<SearchCityViewModel>(SearchCityViewModel
         }
     }
 
-    private fun renderBgContentView() {
-        mainContentView.background = CornerBackroundTopMedium().apply {
+    private fun renderViewTopRound() {
+        viewTopRound.background = CornerBackroundTopMedium().apply {
             setColor(ColorPalette.WHITE)
             setStroke(1, ColorPalette.WHITE)
         }

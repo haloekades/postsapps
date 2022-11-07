@@ -30,11 +30,40 @@
         android:layout_marginTop="@dimen/spacing_x16"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldCV">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="@dimen/spacing_x0">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/collapsingToolbarBgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/viewTopRound"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_x16"
+                        android:layout_marginTop="@dimen/spacing_x20"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/brand"
+            android:background="@color/white"
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -42,7 +71,7 @@
                 android:id="@+id/mainContentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_x16">
+                android:paddingHorizontal="@dimen/spacing_x16">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPrayerTime"

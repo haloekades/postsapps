@@ -14,6 +14,7 @@ import com.ekades.temandoa.features.qurandetail.view.QuranDetailItemCV
 import com.ekades.temandoa.features.quranlist.model.Surah
 import com.ekades.temandoa.lib.application.ui.CoreActivity
 import com.ekades.temandoa.lib.core.ui.extension.*
+import com.ekades.temandoa.lib.core.ui.foundation.background.CornerBackgroundFullRounded
 import com.ekades.temandoa.lib.core.ui.foundation.background.CornerBackroundTopMedium
 import com.ekades.temandoa.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.temandoa.lib.core.ui.foundation.component.Component
@@ -26,10 +27,10 @@ import com.ekades.temandoa.lib.ui.component.loading.RectangleSkeletonCV
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_quran_surah_detail.*
 import kotlinx.android.synthetic.main.activity_quran_surah_detail.appBar
-import kotlinx.android.synthetic.main.activity_quran_surah_detail.mainContentView
 import kotlinx.android.synthetic.main.activity_quran_surah_detail.nestedScrollView
 import kotlinx.android.synthetic.main.activity_quran_surah_detail.rvQuranSurah
 import kotlinx.android.synthetic.main.activity_quran_surah_detail.toolbarCV
+import kotlinx.android.synthetic.main.cv_murottal_player.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -54,7 +55,7 @@ class QuranSurahDetailActivity :
         viewModel.processIntent(intent)
         setupMediaPlayer()
         setupAppBarListener()
-        renderBgContentView()
+        renderViewTopRound()
         registerObserver()
         setupRecyclerView()
         viewModel.getQuranSurahDetail()
@@ -144,7 +145,9 @@ class QuranSurahDetailActivity :
         viewModel.surah?.apply {
             tvSurahName.text = namaLatin
             tvSurahMean.text = arti
-            tvTotalAyah.text = "$showType - $jumlahAyat ayat"
+            tvSurahType.text = showType
+            tvTotalAyah.text = "$jumlahAyat ayat"
+            tvSurahNameAr.text = nama
         }
         appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (abs(verticalOffset) >= appBarLayout.totalScrollRange) {
@@ -161,8 +164,8 @@ class QuranSurahDetailActivity :
         })
     }
 
-    private fun renderBgContentView() {
-        mainContentView.background = CornerBackroundTopMedium().apply {
+    private fun renderViewTopRound() {
+        viewTopRound.background = CornerBackroundTopMedium().apply {
             setColor(ColorPalette.WHITE)
             setStroke(1, ColorPalette.WHITE)
         }

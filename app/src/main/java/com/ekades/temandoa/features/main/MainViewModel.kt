@@ -71,7 +71,10 @@ class MainViewModel(
         return this
     }
 
-    private fun getPrayerScheduleToday(cityId: String, year: String, month: String, day: String) {
+    private fun getPrayerScheduleToday(
+        cityId: String, year: String, month: String, day: String,
+        onFailedListener: (() -> Unit)? = null
+    ) {
         viewModelScope.launch {
             try {
                 showLoader(true)
@@ -88,10 +91,12 @@ class MainViewModel(
                         onSuccess(prayerScheduleToday)
                         TemanDoaSession.prayerScheduleToday = prayerScheduleToday.toJson()
                     } else {
+                        onFailedListener?.invoke()
                         onFailed(it.message.orEmpty())
                     }
                 }
             } catch (e: Exception) {
+                onFailedListener?.invoke()
                 onFailed(e.message.orEmpty())
             }
         }
@@ -134,7 +139,9 @@ class MainViewModel(
                     if (requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}") {
                         mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
                     } else {
-                        getPrayerScheduleToday(cityId = id, year = year, month = month, day = day)
+                        getPrayerScheduleToday(cityId = id, year = year, month = month, day = day) {
+                            mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                        }
                     }
                 }
             } else {

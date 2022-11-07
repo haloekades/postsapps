@@ -48,7 +48,7 @@ class AudioPlayerCV @JvmOverloads constructor(
         with(state) {
             surah?.apply {
                 maxDuration = duration?.convertToShownTime() ?: ""
-                tvSurahName.text = "$namaLatin  ($nama)"
+                tvSurahName.text = namaLatin
                 updateDurationView()
                 bgActionPlayer.background = CornerBackgroundFullRounded(Spacing.x42.value).apply {
                     setStroke(3.dp(), ColorPalette.WHITE)

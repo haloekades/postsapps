@@ -24,7 +24,6 @@ import com.ekades.temandoa.lib.ui.component.loading.RectangleSkeletonCV
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_quran_surah_list.*
 import kotlinx.android.synthetic.main.activity_quran_surah_list.appBar
-import kotlinx.android.synthetic.main.activity_quran_surah_list.mainContentView
 import kotlinx.android.synthetic.main.activity_quran_surah_list.nestedScrollView
 import kotlinx.android.synthetic.main.activity_quran_surah_list.titleCollapsingToolbarTextView
 import kotlinx.android.synthetic.main.activity_quran_surah_list.toolbarCV
@@ -45,7 +44,7 @@ class QuranSurahListActivity :
 
     override fun render() = launch(Dispatchers.Main) {
         setupAppBarListener()
-        renderBgContentView()
+        renderViewTopRound()
         registerObserver()
         setupRecyclerView()
         viewModel.getAllQuranSurah()
@@ -77,8 +76,8 @@ class QuranSurahListActivity :
         })
     }
 
-    private fun renderBgContentView() {
-        mainContentView.background = CornerBackroundTopMedium().apply {
+    private fun renderViewTopRound() {
+        viewTopRound.background = CornerBackroundTopMedium().apply {
             setColor(ColorPalette.WHITE)
             setStroke(1, ColorPalette.WHITE)
         }
@@ -111,10 +110,10 @@ class QuranSurahListActivity :
         }
     }
 
-    private fun renderList(surahSections: List<Surah>) {
+    private fun renderList(surahSections: List<Surah>) = launch {
         val components: MutableList<Component<*>> = surahSections.mapIndexed { _, item ->
             ConstraintContainer.newComponent({
-                QuranListItemCV(this)
+                QuranListItemCV(this@QuranSurahListActivity)
             }) {
                 surah = item
                 onItemClickListener = { surah ->

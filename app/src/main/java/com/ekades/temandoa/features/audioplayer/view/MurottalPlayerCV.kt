@@ -49,7 +49,7 @@ class MurottalPlayerCV @JvmOverloads constructor(
                 bgSurahAr.background = CornerBackgroundFullRounded(Spacing.x64.value).apply {
                     setStroke(3.dp(), ColorPalette.WHITE)
                 }
-                tvDuration.text = nama
+                tvSurahNameAr.text = nama
                 tvSurahName.text = namaLatin
                 tvSurahMean.text = arti
                 tvMaxDuration.text = duration?.convertToShownTime()

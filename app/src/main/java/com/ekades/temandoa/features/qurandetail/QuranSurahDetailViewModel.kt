@@ -63,12 +63,21 @@ class QuranSurahDetailViewModel(
     }
 
     private fun setDefaultShownQuranSurah() {
-        val maxPosition = page * 25
 
-        if (maxPosition < mQuranSurahDetail.size) {
-            shownQuranSurahDetail.value = mQuranSurahDetail.subList(0, maxPosition)
-        } else if ((maxPosition - 25) <= mQuranSurahDetail.size) {
-            shownQuranSurahDetail.value = mQuranSurahDetail.subList(0, mQuranSurahDetail.size)
+        viewModelScope.launch {
+            io {
+                val maxPosition = page * 10
+
+                if (maxPosition < mQuranSurahDetail.size) {
+                    ui {
+                        shownQuranSurahDetail.value = mQuranSurahDetail.subList(0, maxPosition)
+                    }
+                } else if ((maxPosition - 10) <= mQuranSurahDetail.size) {
+                    ui {
+                        shownQuranSurahDetail.value = mQuranSurahDetail.subList(0, mQuranSurahDetail.size)
+                    }
+                }
+            }
         }
     }
 

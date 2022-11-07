@@ -61,6 +61,7 @@ class MurottalListItemCV @JvmOverloads constructor(
                         onClickPlayListener?.invoke()
                     } else {
                         onItemClickListener?.invoke(this)
+                        updateColor(isSelected = true, isPlaying = true)
                     }
                 }
                 updateColor(isSelected, isPlaying)

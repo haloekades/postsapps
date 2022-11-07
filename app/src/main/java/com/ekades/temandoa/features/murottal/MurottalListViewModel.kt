@@ -55,11 +55,11 @@ class MurottalListViewModel(
     }
 
     private fun setDefaultShownQuranSurah() {
-        val maxPosition = page * 25
+        val maxPosition = page * 15
 
         if (maxPosition < mQuranSurahList.size) {
             shownQuranSurahList.value = mQuranSurahList.subList(0, maxPosition)
-        } else if ((maxPosition - 25) <= mQuranSurahList.size) {
+        } else if ((maxPosition - 15) <= mQuranSurahList.size) {
             shownQuranSurahList.value = mQuranSurahList.subList(0, mQuranSurahList.size)
         }
     }

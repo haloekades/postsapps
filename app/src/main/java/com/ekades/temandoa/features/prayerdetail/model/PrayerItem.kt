@@ -1,6 +1,6 @@
 package com.ekades.temandoa.features.prayerdetail.model
 
-class PrayerItem(
+data class PrayerItem(
     val id: Int,
     val name: String,
     val arabicHeader: String?,

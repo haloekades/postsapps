@@ -43,8 +43,10 @@ class QuranListItemCV @JvmOverloads constructor(
                 }
                 tvNumber.text = nomor
                 tvSurahName.text = namaLatin
+                tvSurahNameAr.text = nama
                 tvSurahMean.text = arti
-                tvTotalAyah.text = "$showType - $jumlahAyat ayat"
+                tvType.text = showType
+                tvTotalAyah.text = "$jumlahAyat ayat"
                 setOnClickListener {
                     onItemClickListener?.invoke(this)
                 }
