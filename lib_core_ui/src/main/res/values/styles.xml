@@ -310,8 +310,8 @@
     <style name="TitleSplash" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/lato_bold</item>
         <item name="android:fontFamily">@font/lato_bold</item>
-        <item name="android:textSize">@dimen/text_dimen_36</item>
-        <item name="lineHeight">@dimen/text_line_height_36</item>
+        <item name="android:textSize">@dimen/text_dimen_32</item>
+        <item name="lineHeight">@dimen/text_line_height_32</item>
         <item name="fontWeight">@integer/text_weight_700</item>
         <item name="strokeWidth">1dp</item>
         <item name="strokeColor">@color/tundora</item>

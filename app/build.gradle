@@ -33,7 +33,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
-        applicationId "com.ekades.temandoa"
+        applicationId "com.ekades.ruangmuslim"
         minSdkVersion builds.minSdk
         targetSdkVersion builds.targetSdk
         versionCode builds.versionCode

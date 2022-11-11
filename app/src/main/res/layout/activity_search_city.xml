@@ -7,13 +7,13 @@
     android:background="@color/brand"
     tools:context=".features.prayerschedule.searchcity.SearchCityActivity">
 
-    <com.ekades.temandoa.lib.ui.component.toolbar.ToolbarCV
+    <com.ekades.ruangmuslim.lib.ui.component.toolbar.ToolbarCV
         android:id="@+id/toolbarCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ekades.temandoa.lib.ui.component.form.InputFieldCV
+    <com.ekades.ruangmuslim.lib.ui.component.form.InputFieldCV
         android:id="@+id/inputFieldCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

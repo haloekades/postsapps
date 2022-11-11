@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
+        <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
             android:id="@+id/icActionPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

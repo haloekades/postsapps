@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/prayerNameTextView"
-        style="@style/Heading3"
+        style="@style/Heading4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_x16"
@@ -89,7 +89,7 @@
                     android:textColor="@color/mineShaft"
                     app:layout_constraintTop_toBottomOf="@id/arabicHeaderMeaningTextView" />
 
-                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
+                <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerCb"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                     app:layout_constraintTop_toTopOf="@id/cbShowLatin"
                     app:layout_constraintBottom_toBottomOf="@id/cbShowLatin"/>
 
-                <com.ekades.temandoa.lib.ui.component.selection.CheckBoxCV
+                <com.ekades.ruangmuslim.lib.ui.component.selection.CheckBoxCV
                     android:id="@+id/cbShowLatin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerMean,bgMeanView, meanTextView" />
 
-                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
+                <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerMean"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -190,7 +190,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerBenefits,bgBenefitsView, benefitsTextView" />
 
-                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
+                <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerBenefits"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     app:constraint_referenced_ids="dividerSource, sourceTextView" />
 
-                <com.ekades.temandoa.lib.ui.component.misc.DividerCV
+                <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
                     android:id="@+id/dividerSource"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

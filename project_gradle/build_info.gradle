@@ -1,9 +1,9 @@
 ext {
     builds = [
             minSdk          : 16,
-            compileSdk      : 30,
-            targetSdk       : 30,
-            versionCode     : 2022010002,
-            versionName     : '1.0.2'
+            compileSdk      : 31,
+            targetSdk       : 31,
+            versionCode     : 2022010000,
+            versionName     : '1.0.0'
     ]
 }

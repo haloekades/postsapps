@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".features.splash.SplashActivity">
 
-    <com.ekades.temandoa.lib.ui.component.icon.BasicIconCV
+    <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
         android:id="@+id/iconCV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

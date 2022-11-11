@@ -7,7 +7,7 @@
     android:background="@color/brand"
     tools:context=".features.prayerschedule.searchcity.SearchCityActivity">
 
-    <com.ekades.temandoa.lib.ui.component.toolbar.ToolbarCV
+    <com.ekades.ruangmuslim.lib.ui.component.toolbar.ToolbarCV
         android:id="@+id/toolbarCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <com.ekades.temandoa.features.audioplayer.view.AudioPlayerCV
+        <com.ekades.ruangmuslim.features.audioplayer.view.AudioPlayerCV
             android:id="@+id/audioPlayerCV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
