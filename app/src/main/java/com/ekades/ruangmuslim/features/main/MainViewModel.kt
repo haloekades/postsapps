@@ -64,7 +64,6 @@ class MainViewModel(
                 4 -> section.icon = R.drawable.ic_hand_pray
                 5 -> section.icon = R.drawable.ic_human_praying_morning
                 6 -> section.icon = R.drawable.ic_human_praying_night
-//                6 -> section.icon = R.drawable.ic_quran
             }
         }
 
@@ -72,6 +71,7 @@ class MainViewModel(
     }
 
     private fun getPrayerScheduleToday(
+        isTomorrow: Boolean = false,
         cityId: String, year: String, month: String, day: String,
         onFailedListener: (() -> Unit)? = null
     ) {
@@ -84,12 +84,17 @@ class MainViewModel(
                     )
                 ).collect {
                     if (it.status && it.data != null) {
-                        val prayerScheduleToday = it.data.also { prayerScheduleToday ->
-                            prayerScheduleToday.requestDate = it.data.jadwal?.date
-                        }
 
-                        onSuccess(prayerScheduleToday)
-                        TemanDoaSession.prayerScheduleToday = prayerScheduleToday.toJson()
+                        if (isTomorrow || it.data.isBeforeIsya) {
+                            val prayerScheduleToday = it.data.also { prayerScheduleToday ->
+                                prayerScheduleToday.requestDate = it.data.jadwal?.date
+                            }
+
+                            onSuccess(prayerScheduleToday)
+                            TemanDoaSession.prayerScheduleToday = prayerScheduleToday.toJson()
+                        } else {
+                            checkPrayerTomorrow(cityId = cityId)
+                        }
                     } else {
                         onFailedListener?.invoke()
                         onFailed(it.message.orEmpty())
@@ -102,13 +107,46 @@ class MainViewModel(
         }
     }
 
+    private fun getSelectedTimeTodayAndTomorrow(
+        result: (
+            year: String, month: String, day: String, yearTmrw: String, monthTmrw: String, dayTmrw: String
+        ) -> Unit
+    ) = viewModelScope.launch {
+        try {
+            val dt = Date()
+            val c = Calendar.getInstance()
+            c.time = dt
+
+            val year = c.get(Calendar.YEAR).toString()
+            val month = (c.get(Calendar.MONTH) + 1).toString()
+            val day = c.get(Calendar.DATE).toString()
+
+            c.set(Calendar.DATE, c.get(Calendar.DATE) + 1)
+
+            val yearTmrw = c.get(Calendar.YEAR).toString()
+            val monthTmrw = (c.get(Calendar.MONTH) + 1).toString()
+            val dayTmrw = c.get(Calendar.DATE).toString()
+
+            result.invoke(
+                year, month, day, yearTmrw, monthTmrw, dayTmrw
+            )
+        } catch (e: Exception) {
+        }
+    }
+
     private fun getSelectedTime(
+        isTomorrow: Boolean = false,
         result: (year: String, month: String, day: String) -> Unit
     ) = viewModelScope.launch {
         try {
             val dt = Date()
             val c = Calendar.getInstance()
             c.time = dt
+
+            if (isTomorrow) {
+                c.set(Calendar.DATE, c.get(Calendar.DATE) + 1)
+            }
+
             result.invoke(
                 c.get(Calendar.YEAR).toString(),
                 (c.get(Calendar.MONTH) + 1).toString(),
@@ -135,9 +173,20 @@ class MainViewModel(
     fun checkPrayerTime() {
         getPrayerScheduleTodayFromSession()?.apply {
             if (NetworkUtils.isConnected()) {
-                getSelectedTime { year, month, day ->
-                    if (requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}") {
-                        mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                getSelectedTimeTodayAndTomorrow { year, month, day, yearTmrw, monthTmrw, dayTmrw ->
+                    val isToday = requestDate == "$year-${month.adjustZero()}-${day.adjustZero()}"
+                    val isTomorrow =
+                        requestDate == "$yearTmrw-${monthTmrw.adjustZero()}-${dayTmrw.adjustZero()}"
+
+                    if (isToday || isTomorrow) {
+                        if (isBeforeIsya || isTomorrow) {
+                            mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                        } else {
+                            checkPrayerTomorrow(cityId = id) {
+                                mViewState.value =
+                                    PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
+                            }
+                        }
                     } else {
                         getPrayerScheduleToday(cityId = id, year = year, month = month, day = day) {
                             mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
@@ -147,6 +196,22 @@ class MainViewModel(
             } else {
                 mViewState.value = PrayerScheduleTodayVS.ShowPrayerScheduleToday(this)
             }
+        }
+    }
+
+    private fun checkPrayerTomorrow(
+        cityId: String,
+        onFailedListener: (() -> Unit)? = null
+    ) {
+        getSelectedTime(isTomorrow = true) { year, month, day ->
+            getPrayerScheduleToday(
+                isTomorrow = true,
+                cityId = cityId,
+                year = year,
+                month = month,
+                day = day,
+                onFailedListener = onFailedListener
+            )
         }
     }
 

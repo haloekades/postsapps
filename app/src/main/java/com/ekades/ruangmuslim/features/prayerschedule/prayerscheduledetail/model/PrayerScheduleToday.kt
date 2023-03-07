@@ -23,12 +23,15 @@ data class PrayerScheduleToday(
             "Ashar ${jadwal?.ashar}"
         } else if (isBefore(jadwal?.maghrib.convertToCalendar())) {
             "Maghrib ${jadwal?.maghrib}"
-        } else if (isBefore(jadwal?.isya.convertToCalendar())) {
+        } else if (isBeforeIsya) {
             "Isya ${jadwal?.isya}"
         } else {
-            ""
+            "Subuh ${jadwal?.subuh}"
         }
     }
+
+    val isBeforeIsya: Boolean
+        get() = isBefore(jadwal?.isya.convertToCalendar())
 
     private fun isBefore(time: Calendar): Boolean {
         val dt = Date()
@@ -49,9 +52,13 @@ data class PrayerScheduleToday(
         if (hour != null && minute != null) {
             c.set(Calendar.HOUR_OF_DAY, hour)
             c.set(Calendar.MINUTE, minute)
-            c.add(Calendar.MINUTE, 7)
+            c.add(Calendar.MINUTE, MINUTE_TOLERANCE)
         }
 
         return c
+    }
+
+    companion object {
+        private const val MINUTE_TOLERANCE = 7
     }
 }
