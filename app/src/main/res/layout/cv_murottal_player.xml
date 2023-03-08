@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
+        <com.ekades.movieapps.lib.ui.component.icon.BasicIconCV
             android:id="@+id/icActionPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
         app:layout_constraintEnd_toStartOf="@id/bgActionPlayer"
         app:layout_constraintBottom_toBottomOf="@id/bgActionPlayer">
 
-        <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
+        <com.ekades.movieapps.lib.ui.component.icon.BasicIconCV
             android:id="@+id/icActionPrevious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
         app:layout_constraintStart_toEndOf="@id/bgActionPlayer"
         app:layout_constraintBottom_toBottomOf="@id/bgActionPlayer">
 
-        <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
+        <com.ekades.movieapps.lib.ui.component.icon.BasicIconCV
             android:id="@+id/icActionNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

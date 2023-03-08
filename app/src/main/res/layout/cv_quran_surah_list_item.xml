@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="@id/tvSurahNameAr"
         app:layout_constraintTop_toBottomOf="@id/tvSurahNameAr" />
 
-    <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
+    <com.ekades.movieapps.lib.ui.component.misc.DividerCV
         android:id="@+id/dividerCV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

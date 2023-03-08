@@ -102,16 +102,16 @@ public static final android.os.Parcelable$Creator *;
 # Application classes that will be serialized/deserialized over Gson
 -keep class com.google.gson.examples.android.model.** { *; }
 
--keep class com.ekades.ruangmuslim.models.** { *; }
--keep class com.ekades.ruangmuslim.entities.** { *; }
--keep class com.ekades.ruangmuslim.network.responses.** { *; }
--keep class com.ekades.ruangmuslim.networks.responses.** { *; }
+-keep class com.ekades.movieapps.models.** { *; }
+-keep class com.ekades.movieapps.entities.** { *; }
+-keep class com.ekades.movieapps.network.responses.** { *; }
+-keep class com.ekades.movieapps.networks.responses.** { *; }
 
 -keep class com.ekades.template.entities.** { *; }
 -keep class com.ekades.template.network.entities.** { *; }
 -keep class com.ekades.template.network.responses.** { *; }
 
--keep class com.ekades.ruangmuslim.lib.core.network.responses.entity.** { *; }
+-keep class com.ekades.movieapps.lib.core.network.responses.entity.** { *; }
 
 ##---------------End: proguard configuration for Gson  ----------
 
@@ -246,15 +246,15 @@ public static final android.os.Parcelable$Creator *;
 -keep class com.moengage.addon.messaging.MoEMessageSyncReceiver
 -keep class com.moengage.addon.messaging.MoEMessageSyncIntentService
 
--keep class com.ekades.ruangmuslim.networksV2.prayerschedule.data.dataSource.response.** { *; }
--keep class com.ekades.ruangmuslim.networksV2.quran.data.dataSource.response.** { *; }
+-keep class com.ekades.movieapps.networksV2.prayerschedule.data.dataSource.response.** { *; }
+-keep class com.ekades.movieapps.networksV2.quran.data.dataSource.response.** { *; }
 
--keep class com.ekades.ruangmuslim.features.main.model.** { *; }
--keep class com.ekades.ruangmuslim.features.prayerdetail.model.** { *; }
--keep class com.ekades.ruangmuslim.features.prayerschedule.prayerscheduledetail.model.** { *; }
--keep class com.ekades.ruangmuslim.features.prayerschedule.searchcity.model.** { *; }
--keep class com.ekades.ruangmuslim.features.qurandetail.model.** { *; }
--keep class com.ekades.ruangmuslim.features.quranlist.model.** { *; }
+-keep class com.ekades.movieapps.features.main.model.** { *; }
+-keep class com.ekades.movieapps.features.prayerdetail.model.** { *; }
+-keep class com.ekades.movieapps.features.prayerschedule.prayerscheduledetail.model.** { *; }
+-keep class com.ekades.movieapps.features.prayerschedule.searchcity.model.** { *; }
+-keep class com.ekades.movieapps.features.qurandetail.model.** { *; }
+-keep class com.ekades.movieapps.features.quranlist.model.** { *; }
 
 -dontwarn com.moengage.location.GeoManager
 -dontwarn com.moengage.core.GeoTask

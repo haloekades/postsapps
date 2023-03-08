@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ekades.ruangmuslim">
+    package="com.ekades.movieapps">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,7 +13,7 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="com.ekades.ruangmuslim.apps.BaseApp"
+        android:name="com.ekades.movieapps.apps.BaseApp"
         android:allowBackup="false"
         android:exported="true"
         android:hardwareAccelerated="true"
@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.ekades.ruangmuslim.features.splash.SplashActivity"
+            android:name="com.ekades.movieapps.features.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -32,28 +32,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ekades.ruangmuslim.features.main.MainActivity"
+            android:name="com.ekades.movieapps.features.main.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.prayerdetail.PrayerDetailActivity"
+            android:name="com.ekades.movieapps.features.mainmovie.MainMovieActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ekades.movieapps.features.genre.GenreActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ekades.movieapps.features.movielist.MovieListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ekades.movieapps.features.moviedetail.MovieDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ekades.movieapps.features.prayerdetail.PrayerDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.prayerlist.PrayerListActivity"
+            android:name="com.ekades.movieapps.features.prayerlist.PrayerListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.prayerschedule.searchcity.SearchCityActivity"
+            android:name="com.ekades.movieapps.features.prayerschedule.searchcity.SearchCityActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity"
+            android:name="com.ekades.movieapps.features.prayerschedule.prayerscheduledetail.PrayerScheduleDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.quranlist.QuranSurahListActivity"
+            android:name="com.ekades.movieapps.features.quranlist.QuranSurahListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.qurandetail.QuranSurahDetailActivity"
+            android:name="com.ekades.movieapps.features.qurandetail.QuranSurahDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ekades.ruangmuslim.features.murottal.MurottalListActivity"
+            android:name="com.ekades.movieapps.features.murottal.MurottalListActivity"
             android:screenOrientation="portrait" />
     </application>
 

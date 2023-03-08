@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ekades.ruangmuslim.lib.ui.component.icon.BasicIconCV
+    <com.ekades.movieapps.lib.ui.component.icon.BasicIconCV
         android:id="@+id/timeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ekades.ruangmuslim.lib.ui.component.misc.DividerCV
+    <com.ekades.movieapps.lib.ui.component.misc.DividerCV
         android:id="@+id/dividerCV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

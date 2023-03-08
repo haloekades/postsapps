@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".features.prayerlist.PrayerListActivity">
 
-    <com.ekades.ruangmuslim.lib.ui.component.toolbar.ToolbarCV
+    <com.ekades.movieapps.lib.ui.component.toolbar.ToolbarCV
         android:id="@+id/toolbarCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

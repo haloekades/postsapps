@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "5c1c99f3-7cf3-465e-ba2d-a8418d56bb6b",
+		"name": "The Movie DB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23076861"
+	},
+	"item": [
+		{
+			"name": "discover",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/discover/movie?api_key=be8b6c8aa9a5f4e240bb6093f9849051&page=1&with_genres=53",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"discover",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "be8b6c8aa9a5f4e240bb6093f9849051"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "with_genres",
+							"value": "53",
+							"description": "untuk genre bisa dipisah dengan koma contoh 53,12,28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/genre/movie/list?api_key=be8b6c8aa9a5f4e240bb6093f9849051",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"genre",
+						"movie",
+						"list"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "be8b6c8aa9a5f4e240bb6093f9849051"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/497698?api_key=be8b6c8aa9a5f4e240bb6093f9849051",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"497698"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "be8b6c8aa9a5f4e240bb6093f9849051"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
