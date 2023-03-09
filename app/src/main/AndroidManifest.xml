@@ -20,11 +20,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-
         <activity
             android:name="com.ekades.movieapps.features.splash.SplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,16 +35,19 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.ekades.movieapps.features.mainmovie.MainMovieActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ekades.movieapps.features.genre.GenreActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ekades.movieapps.features.movielist.MovieListActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.notes.NotesActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ekades.movieapps.features.moviedetail.MovieDetailActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ekades.movieapps.features.prayerdetail.PrayerDetailActivity"
             android:screenOrientation="portrait" />

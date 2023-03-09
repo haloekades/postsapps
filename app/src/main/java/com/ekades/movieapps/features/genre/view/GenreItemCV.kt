@@ -19,7 +19,7 @@ class GenreItemCV @JvmOverloads constructor(
 
     class State {
         var section: GenreModel? = null
-        var onItemClickListener: ((Int) -> Unit)? = null
+        var onItemClickListener: ((Int, String) -> Unit)? = null
     }
 
     init {
@@ -41,13 +41,8 @@ class GenreItemCV @JvmOverloads constructor(
         with(state) {
             section?.apply {
                 titleTextView.text = name
-//                iconCV.bind {
-//                    imageSize = IconSize.LARGE
-//                    imageDrawable = icon
-//                }
-
                 setOnClickListener {
-                    onItemClickListener?.invoke(id)
+                    onItemClickListener?.invoke(id, name)
                 }
             }
         }

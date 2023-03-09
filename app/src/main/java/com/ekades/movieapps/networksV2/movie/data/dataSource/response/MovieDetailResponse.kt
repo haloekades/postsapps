@@ -1,10 +1,12 @@
 package com.ekades.movieapps.networksV2.movie.data.dataSource.response
 
 import com.ekades.movieapps.features.genre.model.GenreModel
+import com.google.gson.annotations.SerializedName
 
 data class MovieDetailResponse(
     val id: Int,
     val adult: Boolean,
+    @SerializedName("backdrop_path")
     val backdropPath: String,
     val budget: Long,
     val genres: List<GenreModel>,
@@ -14,6 +16,7 @@ data class MovieDetailResponse(
     val originalTitle: String,
     val overview: String,
     val popularity: Double,
+    @SerializedName("poster_path")
     val posterPath: String,
     val releaseDate: String,
     val revenue: Long,

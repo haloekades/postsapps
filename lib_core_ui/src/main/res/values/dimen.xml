@@ -14,6 +14,8 @@
     <dimen name="spacing_x64">64dp</dimen>
     <dimen name="spacing_x76">76dp</dimen>
     <dimen name="spacing_x88">88dp</dimen>
+    <dimen name="poster_height">100dp</dimen>
+    <dimen name="img_height">200dp</dimen>
 
     <dimen name="toast_message_width">296dp</dimen>
     <dimen name="toast_component_width">328dp</dimen>

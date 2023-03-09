@@ -16,5 +16,6 @@ enum class Spacing(val value: Int) {
     x42(R.dimen.spacing_x42.asDimen()),
     x48(R.dimen.spacing_x48.asDimen()),
     x64(R.dimen.spacing_x64.asDimen()),
-    x76(R.dimen.spacing_x76.asDimen())
+    x76(R.dimen.spacing_x76.asDimen()),
+    xImgHeigt(R.dimen.img_height.asDimen())
 }

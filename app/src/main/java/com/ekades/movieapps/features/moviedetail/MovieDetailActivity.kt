@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import com.ekades.movieapps.R
 import com.ekades.movieapps.features.moviedetail.state.MovieDetailVS
 import com.ekades.movieapps.lib.application.ui.CoreActivity
+import com.ekades.movieapps.lib.core.ui.extension.loadImageUrlWithPlaceHolder
 import com.ekades.movieapps.lib.core.ui.foundation.background.CornerBackroundTopMedium
 import com.ekades.movieapps.lib.core.ui.foundation.color.ColorPalette
 import com.ekades.movieapps.networksV2.movie.data.dataSource.response.MovieDetailResponse
@@ -25,7 +26,6 @@ class MovieDetailActivity : CoreActivity<MovieDetailViewModel>(MovieDetailViewMo
     override fun render() = launch(Dispatchers.Main) {
         registerObserver()
         renderToolbar()
-        renderBgContentView()
         viewModel.getMovieDetail(intent.getIntExtra(EXTRA_MOVIE_ID, 0))
     }
 
@@ -45,46 +45,22 @@ class MovieDetailActivity : CoreActivity<MovieDetailViewModel>(MovieDetailViewMo
     }
 
     private fun renderToolbar() {
-        showToolbar()
-        setupAppBarListener()
-    }
-
-    private fun setupAppBarListener() {
-        titleCollapsingToolbarTextView.text = getString(R.string.app_name)
-        appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (abs(verticalOffset) >= appBarLayout.totalScrollRange) {
-                titleCollapsingToolbarTextView.alpha = 0F
-                showToolbar()
-            } else {
-                titleCollapsingToolbarTextView.alpha = 1F
-                showToolbar(false)
-            }
-        })
-    }
-
-    private fun showToolbar(isVisible: Boolean = true) {
         toolbarCV.bind {
-            toolbarTitle = if (isVisible) {
-                getString(R.string.app_name)
-            } else {
-                null
-            }
-        }
-    }
-
-    private fun renderBgContentView() {
-        mainContentView.background = CornerBackroundTopMedium().apply {
-            setColor(ColorPalette.SNOW)
-            setStroke(1, ColorPalette.WHITE)
+            toolbarTitle = getString(R.string.app_name)
         }
     }
 
     private fun renderMovieDetail(movieDetailResponse: MovieDetailResponse) {
         tvTitle.text = movieDetailResponse.title
+        ivBackDrop.loadImageUrlWithPlaceHolder(BASE_IMAGE_URL + movieDetailResponse.backdropPath)
+        ivPoster.loadImageUrlWithPlaceHolder(BASE_IMAGE_URL + movieDetailResponse.posterPath)
+        tvDescription.text = movieDetailResponse.overview
     }
 
     companion object {
         private const val EXTRA_MOVIE_ID = "EXTRA_MOVIE_ID"
+        private const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500/"
+
 
         @JvmStatic
         fun newIntent(context: Context?, movieId: Int): Intent {

@@ -12,6 +12,7 @@ import com.ekades.movieapps.features.movielist.state.MovieListVS
 import com.ekades.movieapps.features.movielist.view.MovieListItemCV
 import com.ekades.movieapps.lib.application.ui.CoreActivity
 import com.ekades.movieapps.lib.core.ui.extension.diffCalculateAdapter
+import com.ekades.movieapps.lib.core.ui.extension.gridLayoutAdapter
 import com.ekades.movieapps.lib.core.ui.extension.linearLayoutAdapter
 import com.ekades.movieapps.lib.core.ui.extension.newComponent
 import com.ekades.movieapps.lib.core.ui.foundation.background.CornerBackroundTopMedium
@@ -26,11 +27,10 @@ import com.ekades.movieapps.lib.ui.component.loading.RectangleSkeletonCV
 import kotlinx.android.synthetic.main.activity_movie_list.*
 import kotlinx.coroutines.*
 
-
 class MovieListActivity : CoreActivity<MovieListViewModel>(MovieListViewModel::class) {
 
     private val adapter by lazy {
-        rvPrayerTime?.linearLayoutAdapter(this)
+        rvPrayerTime?.gridLayoutAdapter(this, 2)
     }
 
     init {
@@ -39,7 +39,7 @@ class MovieListActivity : CoreActivity<MovieListViewModel>(MovieListViewModel::c
 
     override fun render() = launch(Dispatchers.Main) {
         viewModel.setGenreId(intent)
-        showToolbar()
+        showToolbar(intent.getStringExtra(EXTRA_GENRE_NAME).orEmpty())
         registerObeserver()
         renderViewTopRound()
         setupRecyclerView()
@@ -68,12 +68,12 @@ class MovieListActivity : CoreActivity<MovieListViewModel>(MovieListViewModel::c
         })
     }
 
-    private fun showToolbar() {
+    private fun showToolbar(toolbarTitle: String) {
         toolbarCV.bind {
             onClickBackListener = {
                 onBackPressed()
             }
-            toolbarTitle = "Movie"
+            this.toolbarTitle = toolbarTitle
         }
     }
 
@@ -135,11 +135,13 @@ class MovieListActivity : CoreActivity<MovieListViewModel>(MovieListViewModel::c
 
     companion object {
         const val EXTRA_GENRE_ID = "extra_genre_id"
+        const val EXTRA_GENRE_NAME = "extra_genre_name"
 
         @JvmStatic
-        fun newIntent(context: Context?, genreId: Int): Intent {
+        fun newIntent(context: Context?, genreId: Int, genreName: String): Intent {
             return Intent(context, MovieListActivity::class.java).apply {
                 putExtra(EXTRA_GENRE_ID, genreId)
+                putExtra(EXTRA_GENRE_NAME, genreName)
             }
         }
     }

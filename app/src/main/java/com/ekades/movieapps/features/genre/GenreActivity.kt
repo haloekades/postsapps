@@ -24,7 +24,7 @@ import kotlin.math.abs
 class GenreActivity : CoreActivity<GenreViewModel>(GenreViewModel::class) {
 
     private val adapter by lazy {
-        rvPrayerTime?.gridLayoutAdapter(this, 2)
+        rvPrayerTime?.linearLayoutAdapter(this)
     }
 
     init {
@@ -50,30 +50,8 @@ class GenreActivity : CoreActivity<GenreViewModel>(GenreViewModel::class) {
     }
 
     private fun renderToolbar() {
-        showToolbar()
-        setupAppBarListener()
-    }
-
-    private fun setupAppBarListener() {
-        titleCollapsingToolbarTextView.text = getString(R.string.app_name)
-        appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (abs(verticalOffset) >= appBarLayout.totalScrollRange) {
-                titleCollapsingToolbarTextView.alpha = 0F
-                showToolbar()
-            } else {
-                titleCollapsingToolbarTextView.alpha = 1F
-                showToolbar(false)
-            }
-        })
-    }
-
-    private fun showToolbar(isVisible: Boolean = true) {
         toolbarCV.bind {
-            toolbarTitle = if (isVisible) {
-                getString(R.string.app_name)
-            } else {
-                null
-            }
+            toolbarTitle = getString(R.string.genre)
         }
     }
 
@@ -90,8 +68,8 @@ class GenreActivity : CoreActivity<GenreViewModel>(GenreViewModel::class) {
                 GenreItemCV(this)
             }) {
                 section = item
-                onItemClickListener = { genreId ->
-                    openMovieList(genreId)
+                onItemClickListener = { genreId, genreName ->
+                    openMovieList(genreId, genreName)
                 }
             }.setIdentifier(item.id.toString())
         }.toMutableList()
@@ -99,8 +77,8 @@ class GenreActivity : CoreActivity<GenreViewModel>(GenreViewModel::class) {
         adapter?.diffCalculateAdapter(components)
     }
 
-    private fun openMovieList(genreId: Int) {
-        startActivity(MovieListActivity.newIntent(this, genreId))
+    private fun openMovieList(genreId: Int, genreName: String) {
+        startActivity(MovieListActivity.newIntent(this, genreId, genreName))
     }
 
     companion object {
