@@ -9,7 +9,7 @@ import com.ekades.movieapps.lib.core.ui.foundation.background.shadowLarge
 import com.ekades.movieapps.lib.core.ui.foundation.container.ConstraintContainer
 import com.ekades.movieapps.lib.core.ui.foundation.corner.CornerRadius
 import com.ekades.movieapps.lib.core.ui.foundation.spacing.Spacing
-import kotlinx.android.synthetic.main.cv_main_item.view.*
+import kotlinx.android.synthetic.main.cv_genre_item.view.*
 
 class GenreItemCV @JvmOverloads constructor(
     context: Context,
